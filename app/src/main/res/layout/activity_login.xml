@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".loginActivity">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="237dp"
+        android:layout_height="247dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="160dp"
+        android:src="@mipmap/myd1"
+        app:layout_constraintBottom_toTopOf="@id/usuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+
+        android:id="@+id/usuario"
+
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+
+        android:drawableLeft="@mipmap/cadeadologin"
+        android:drawablePadding="15dp"
+
+
+        android:inputType="textEmailAddress"
+        android:selectAllOnFocus="false"
+
+        android:textColor="#C0C0C0"
+        android:theme="@style/styleEdditTextLogin"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <EditText
+
+        android:id="@+id/senha"
+
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+
+        android:drawableLeft="@mipmap/chavelogin"
+        android:drawablePadding="15dp"
+
+        android:layout_marginTop="20dp"
+        android:imeActionLabel="Fim"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="false"
+        android:textColor="#C0C0C0"
+        android:theme="@style/styleEdditTextLogin"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usuario" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="124dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="55dp"
+
+        android:layout_marginEnd="160dp"
+        android:background="@drawable/btnlogin"
+
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/login"
+
+        android:textAllCaps="false"
+        android:textColor="@color/TextoBranco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/senha"
+        android:onClick="irParaHome"
+       />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
