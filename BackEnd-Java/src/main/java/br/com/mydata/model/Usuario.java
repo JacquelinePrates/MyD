@@ -1,17 +1,31 @@
 package br.com.mydata.model;
 
-public class Usuario<T> {
-	private long id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "usuarios")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Usuario {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
 	private String email;
 	private String senha;
-	private T tipo;
+	private String tipo;
 	
 	public Usuario() {
 		
 	}
 	
-	public Usuario(long id, String email, String senha, T tipo) {
-		super();
+	public Usuario(long id, String email, String senha, String tipo) {
 		this.id = id;
 		this.email = email;
 		this.senha = senha;
@@ -42,11 +56,11 @@ public class Usuario<T> {
 		this.senha = senha;
 	}
 
-	public T getTipo() {
+	public String getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(T tipo) {
+	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
 	

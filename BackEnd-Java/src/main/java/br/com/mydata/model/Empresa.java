@@ -1,6 +1,13 @@
 package br.com.mydata.model;
 
-public class Empresa {
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "empresas")
+@PrimaryKeyJoinColumn(name = "idUsuario")
+public class Empresa extends Usuario{
 	private String razaoSocial;
 	private String cnpj;
 	

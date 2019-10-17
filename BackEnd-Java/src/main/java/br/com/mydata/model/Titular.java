@@ -1,6 +1,13 @@
 package br.com.mydata.model;
 
-public class Titular {
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "titulares")
+@PrimaryKeyJoinColumn(name = "idUsuario")
+public class Titular extends Usuario{
 	private String nome;
 	private String cpf;
 	
