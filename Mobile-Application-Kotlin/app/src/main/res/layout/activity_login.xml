@@ -15,14 +15,14 @@
         android:layout_marginStart="160dp"
         android:layout_marginEnd="160dp"
         android:src="@mipmap/myd1"
-        app:layout_constraintBottom_toTopOf="@id/usuario"
+        app:layout_constraintBottom_toTopOf="@id/EditTextEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
 
-        android:id="@+id/usuario"
+        android:id="@+id/EditTextEmail"
 
         android:layout_width="300dp"
         android:layout_height="45dp"
@@ -43,7 +43,7 @@
 
     <EditText
 
-        android:id="@+id/senha"
+        android:id="@+id/EditTextSenha"
 
         android:layout_width="300dp"
         android:layout_height="52dp"
@@ -61,7 +61,7 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usuario" />
+        app:layout_constraintTop_toBottomOf="@+id/EditTextEmail" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -81,8 +81,8 @@
         android:textColor="@color/TextoBranco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/senha"
-        android:onClick="irParaHome"
+        app:layout_constraintTop_toBottomOf="@+id/EditTextSenha"
+        android:onClick="validacaoDeLogin"
        />
 
 

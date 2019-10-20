@@ -8,28 +8,36 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "usuarios")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario {
 	
-	@Id
+	@Id @JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
 	private String email;
 	private String senha;
 	private String tipo;
+	private boolean valido;
 	
 	public Usuario() {
 		
 	}
 	
-	public Usuario(long id, String email, String senha, String tipo) {
+	public Usuario(long id, String email, String senha, String tipo, Boolean valido) {
 		this.id = id;
 		this.email = email;
 		this.senha = senha;
 		this.tipo = tipo;
+		this.valido = valido;
+	}
+	
+	public Usuario(String email, String senha) {
+		this.email = email;
+		this.senha = senha;
 	}
 
 	public long getId() {
@@ -63,5 +71,12 @@ public class Usuario {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	
+
+	public boolean getValido() {
+		return valido;
+	}
+
+	public void setValido(boolean valido) {
+		this.valido = valido;
+	}
 }
