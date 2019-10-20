@@ -15,15 +15,6 @@ public class LoginController {
 	
 	@PostMapping("autenticacao")
 	public Boolean login(@RequestBody Usuario usuario) {
-		Usuario mock = new Usuario();
-		mock.setId(UUID.randomUUID().toString());
-		mock.setNome("Joao");
-		mock.setSenha("1234");
-		
-		if(usuario.getNome().equals(mock.getNome()) && usuario.getSenha().equals(mock.getSenha())) {
-			return true;
-		}else {
-			return false;
-		}
+		return null;
 	}
 }
