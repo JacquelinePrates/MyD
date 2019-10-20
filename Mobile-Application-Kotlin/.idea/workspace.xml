@@ -6,32 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00089f27-5189-45c0-a4db-f3eee29e1780" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_7_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_8_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_13_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_3_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd-Java/src/main/java/br/com/mydata/MyDJavaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd-Java/src/main/java/br/com/mydata/MyDJavaApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd-Java/src/main/java/br/com/mydata/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd-Java/src/main/java/br/com/mydata/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd-Java/src/main/java/br/com/mydata/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd-Java/src/main/java/br/com/mydata/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd-Java/target/classes/br/com/mydata/MyDJavaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd-Java/target/classes/br/com/mydata/MyDJavaApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd-Java/target/classes/br/com/mydata/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd-Java/target/classes/br/com/mydata/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd-Java/target/classes/br/com/mydata/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd-Java/target/classes/br/com/mydata/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_2_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_12_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_15_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_5_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_3_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_5_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/myd/com/projeto/myd/model/Usuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/myd/com/projeto/myd/model/Usuario.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/myd/com/projeto/myd/restConection/LoginService.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/projeto/myd/com/projeto/myd/restConection/RetrofitInitializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/projeto/myd/com/projeto/myd/restConection/RetrofitInitializer.kt" afterDir="false" />
-    </list>
+    <list default="true" id="00089f27-5189-45c0-a4db-f3eee29e1780" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/projeto/myd/loginActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="63" column="61" lean-forward="true" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
+            <state relative-caret-position="425">
+              <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -143,8 +118,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/myd/com/projeto/myd/model/Usuario.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/myd/com/projeto/myd/restConection/Service/LoginService.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/myd/loginActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/myd/com/projeto/myd/restConection/WebCliente/LoginWebCliente.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/myd/loginActivity.kt" />
       </list>
     </option>
   </component>
@@ -496,8 +471,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/projeto/myd/loginActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="63" column="61" lean-forward="true" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
+        <state relative-caret-position="425">
+          <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
         </state>
       </provider>
     </entry>

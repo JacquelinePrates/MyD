@@ -34,10 +34,9 @@ class loginActivity : AppCompatActivity() {
                 response?.body()?.let {
                     val email = it.email
                     val senha = it.senha
-                    println("onResponse")
 
                     if (it.valido){
-                        irParaHome()
+                        irParaHome(email, senha)
                     }else{
                         usuarioInvalido()
                     }
@@ -58,9 +57,10 @@ class loginActivity : AppCompatActivity() {
 
     fun irParaHome(email : String, senha : String) {
 
-        
-
         var telaHome = Intent(this, homeActivity::class.java)
+
+        telaHome.putExtra("email", email)
+        telaHome.putExtra("senha", senha)
 
         startActivity(telaHome)
     }
