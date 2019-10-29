@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background=" #000">
+    android:background="#000000">
 
     <LinearLayout
         style="@style/styleLinearLayoutTelaInteira"
@@ -19,12 +19,29 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_account_box_black_24dp" />
+                    android:src="@drawable/ic_email_black_24dp" />
 
                 <EditText
-                    android:id="@+id/EditTextLoginEmail"
+                    android:id="@+id/EditTextCadastroEmail"
                     style="@style/styleEditTextLoginCadastro"
                     android:hint="@string/e_mail"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/styleLinearLayoutDivisorias"></LinearLayout>
+
+            <LinearLayout style="@style/styleLinearLayoutEditText">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_person_black_24dp" />
+
+                <EditText
+                    android:id="@+id/EditTextCadastroNome"
+                    style="@style/styleEditTextLoginCadastro"
+                    android:hint="@string/nome"
                     android:inputType="text" />
             </LinearLayout>
 
@@ -39,10 +56,27 @@
                     android:src="@drawable/ic_lock_black_24dp" />
 
                 <EditText
-                    android:id="@+id/EditTextLoginSenha"
+                    android:id="@+id/EditTextCadastroSenha"
                     style="@style/styleEditTextLoginCadastro"
                     android:hint="@string/senha"
-                    android:inputType="textPassword" />
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/styleLinearLayoutDivisorias"></LinearLayout>
+
+            <LinearLayout style="@style/styleLinearLayoutEditText">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_lock_black_24dp" />
+
+                <EditText
+                    android:id="@+id/EditTextCadastroConfimarSenha"
+                    style="@style/styleEditTextLoginCadastro"
+                    android:hint="@string/confirmar_senha"
+                    android:inputType="number" />
             </LinearLayout>
 
             <LinearLayout style="@style/styleLinearLayoutDivisorias"></LinearLayout>
@@ -56,16 +90,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/ButtonLogin"
+            android:id="@+id/ButtonCriarConta"
             style="@style/styleTextViewButtonLoginCadastro"
-            android:onClick="validacaoDeLogin"
-            android:text="@string/login" />
+            android:text="@string/criar_conta" />
 
         <TextView
-            android:id="@+id/TextViewAindaNaoSouCadastrado"
+            android:id="@+id/TextViewJaTemUmaConta"
             style="@style/styleTextViewLoginCadastro"
-            android:onClick="cadastro"
-            android:text="@string/ainda_n_o_sou_cadastrado" />
+            android:text="@string/j_tem_uma_conta" />
     </LinearLayout>
 
     <LinearLayout
@@ -79,6 +111,4 @@
             android:layout_height="150dp"
             android:src="@mipmap/myd2" />
     </LinearLayout>
-
-
 </RelativeLayout>
