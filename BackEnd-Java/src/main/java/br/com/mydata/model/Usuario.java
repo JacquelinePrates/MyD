@@ -20,31 +20,29 @@ public class Usuario {
 	private Long id;
 	private String email;
 	private String senha;
-	private String tipo;
+	private String cpf;
 	private boolean valido;
 	
 	public Usuario() {
 		
 	}
 	
-	public Usuario(long id, String email, String senha, String tipo, Boolean valido) {
+	
+
+	public Usuario(Long id, String email, String senha, String cpf, boolean valido) {
+		super();
 		this.id = id;
 		this.email = email;
 		this.senha = senha;
-		this.tipo = tipo;
+		this.cpf = cpf;
 		this.valido = valido;
 	}
-	
-	public Usuario(String email, String senha) {
-		this.email = email;
-		this.senha = senha;
-	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -64,15 +62,15 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public String getCpf() {
+		return cpf;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
-	public boolean getValido() {
+	public boolean isValido() {
 		return valido;
 	}
 

@@ -31,7 +31,7 @@ public class Empresa extends Usuario{
 		this.cnpj = cnpj;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

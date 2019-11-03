@@ -19,7 +19,7 @@ public class MyDJavaApplication {
 	@Bean
 	CommandLineRunner runner (UsuarioRepository usuarioRepository) {
 		return args -> {
-			usuarioRepository.save(new Usuario(01, "primerildo@gmail.com", Criptografia.sha256("123456"), "tipo", true));
+			usuarioRepository.save(new Usuario(01L, "primerildo@gmail.com", Criptografia.sha256("123456"), "48986485824", true));
 		};
 		
 	}

@@ -20,7 +20,7 @@ public class LoginService {
 		if(Objects.nonNull(usuarioDoBanco)) {
 			return usuarioDoBanco;
 		}else {
-			return new Usuario(-1, null, null, null, false);
+			return new Usuario(-1L, "", "", "", false);
 		}
 	}
 }
