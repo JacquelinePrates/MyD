@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 
 import br.com.mydata.model.Usuario;
 import br.com.mydata.repository.UsuarioRepository;
+import br.com.mydata.utilities.Criptografia;
 
 @SpringBootApplication
 public class MyDJavaApplication {
@@ -18,7 +19,7 @@ public class MyDJavaApplication {
 	@Bean
 	CommandLineRunner runner (UsuarioRepository usuarioRepository) {
 		return args -> {
-			usuarioRepository.save(new Usuario(01, "primerildo@gmail.com", "123456", "tipo", true));
+			usuarioRepository.save(new Usuario(01, "primerildo@gmail.com", Criptografia.sha256("123456"), "tipo", true));
 		};
 		
 	}

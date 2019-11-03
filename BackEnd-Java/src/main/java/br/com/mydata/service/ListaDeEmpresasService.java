@@ -12,7 +12,7 @@ public class ListaDeEmpresasService {
 
 	public List<InformaçõesRetornadasPelaEmpresaSobreUsuario> todasInformaçõesDoUsuarioNasEmpresas(Usuario usuario) {
 		
-		
+		return null;
 		
 	}
 

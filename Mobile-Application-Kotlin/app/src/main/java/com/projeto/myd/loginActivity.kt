@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.projeto.myd.com.projeto.myd.Utilities.Criptografia
 import com.projeto.myd.com.projeto.myd.model.Usuario
 import com.projeto.myd.com.projeto.myd.restConection.RetrofitInitializer
 import kotlinx.android.synthetic.main.activity_login.*
@@ -19,14 +20,20 @@ class loginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        Criptografia.sha256("teste")
+
 
     }
 
     fun validacaoDeLogin(v: View){
 
         val usuario : Usuario = Usuario()
+
+        val senhaDaTela : String = EditTextLoginSenha.text.toString()
+        val senhaCriptografada : String = Criptografia.sha256(senhaDaTela)
+
         usuario.email = EditTextLoginEmail.text.toString()
-        usuario.senha = EditTextLoginSenha.text.toString()
+        usuario.senha = senhaCriptografada
 
         val call = RetrofitInitializer().loginService().logar(usuario)
         call.enqueue(object : Callback<Usuario?> {
