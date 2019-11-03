@@ -25,8 +25,8 @@ class loginActivity : AppCompatActivity() {
     fun validacaoDeLogin(v: View){
 
         val usuario : Usuario = Usuario()
-        usuario.email = EditTextEmail.text.toString()
-        usuario.senha = EditTextSenha.text.toString()
+        usuario.email = EditTextLoginEmail.text.toString()
+        usuario.senha = EditTextLoginSenha.text.toString()
 
         val call = RetrofitInitializer().loginService().logar(usuario)
         call.enqueue(object : Callback<Usuario?> {
@@ -63,5 +63,12 @@ class loginActivity : AppCompatActivity() {
         telaHome.putExtra("senha", senha)
 
         startActivity(telaHome)
+    }
+
+    fun cadastro(component:View){
+
+        val cadastro = Intent(this, CadastroActivity:: class.java)
+
+        startActivity(cadastro)
     }
 }

@@ -1,90 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    tools:context=".loginActivity">
+    android:background=" #000">
+
+    <LinearLayout
+        style="@style/styleLinearLayoutTelaInteira"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/styleLinearLayoutEditText">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_account_box_black_24dp" />
+
+                <EditText
+                    android:id="@+id/EditTextLoginEmail"
+                    style="@style/styleEditTextLoginCadastro"
+                    android:hint="@string/e_mail"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/styleLinearLayoutDivisorias"></LinearLayout>
+
+            <LinearLayout style="@style/styleLinearLayoutEditText">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_lock_black_24dp" />
+
+                <EditText
+                    android:id="@+id/EditTextLoginSenha"
+                    style="@style/styleEditTextLoginCadastro"
+                    android:hint="@string/senha"
+                    android:inputType="textPassword" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/styleLinearLayoutDivisorias"></LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/styleLinearLayoutTelaInteira"
+        android:layout_marginBottom="20dp"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ButtonLogin"
+            style="@style/styleTextViewButtonLoginCadastro"
+            android:onClick="validacaoDeLogin"
+            android:text="@string/login" />
+
+        <TextView
+            android:id="@+id/TextViewAindaNaoSouCadastrado"
+            style="@style/styleTextViewLoginCadastro"
+            android:onClick="cadastro"
+            android:text="@string/ainda_n_o_sou_cadastrado" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="400dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@mipmap/myd2" />
+    </LinearLayout>
 
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="237dp"
-        android:layout_height="247dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="160dp"
-        android:src="@mipmap/myd1"
-        app:layout_constraintBottom_toTopOf="@id/EditTextEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-
-        android:id="@+id/EditTextEmail"
-
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-
-        android:drawableLeft="@mipmap/cadeadologin"
-        android:drawablePadding="15dp"
-
-
-        android:inputType="textEmailAddress"
-        android:selectAllOnFocus="false"
-
-        android:textColor="#C0C0C0"
-        android:theme="@style/styleEdditTextLogin"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
-
-    <EditText
-
-        android:id="@+id/EditTextSenha"
-
-        android:layout_width="300dp"
-        android:layout_height="52dp"
-
-        android:drawableLeft="@mipmap/chavelogin"
-        android:drawablePadding="15dp"
-
-        android:layout_marginTop="20dp"
-        android:imeActionLabel="Fim"
-        android:imeOptions="actionDone"
-        android:inputType="textPassword"
-        android:selectAllOnFocus="false"
-        android:textColor="#C0C0C0"
-        android:theme="@style/styleEdditTextLogin"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditTextEmail" />
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="124dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="55dp"
-
-        android:layout_marginEnd="160dp"
-        android:background="@drawable/btnlogin"
-
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="@string/login"
-
-        android:textAllCaps="false"
-        android:textColor="@color/TextoBranco"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditTextSenha"
-        android:onClick="validacaoDeLogin"
-       />
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
