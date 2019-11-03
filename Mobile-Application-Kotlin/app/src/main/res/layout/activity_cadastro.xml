@@ -53,6 +53,23 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
+                    android:src="@drawable/ic_perm_identity_black_24dp" />
+
+                <EditText
+                    android:id="@+id/EditTextCadastrocPF"
+                    style="@style/styleEditTextLoginCadastro"
+                    android:hint="CPF"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/styleLinearLayoutDivisorias"></LinearLayout>
+
+            <LinearLayout style="@style/styleLinearLayoutEditText">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
                     android:src="@drawable/ic_lock_black_24dp" />
 
                 <EditText
