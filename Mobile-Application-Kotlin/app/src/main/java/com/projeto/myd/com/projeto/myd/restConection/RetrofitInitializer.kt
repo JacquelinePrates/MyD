@@ -1,5 +1,6 @@
 package com.projeto.myd.com.projeto.myd.restConection
 
+import com.projeto.myd.com.projeto.myd.restConection.Service.CadastroService
 import com.projeto.myd.com.projeto.myd.restConection.Service.LoginService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -14,5 +15,9 @@ class RetrofitInitializer {
 
     fun loginService() : LoginService {
         return retrofit.create(LoginService::class.java)
+    }
+
+    fun cadastroService() : CadastroService {
+        return retrofit.create(CadastroService::class.java)
     }
 }

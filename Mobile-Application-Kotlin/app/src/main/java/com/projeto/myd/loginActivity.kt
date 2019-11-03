@@ -19,10 +19,6 @@ class loginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
-        Criptografia.sha256("teste")
-
-
     }
 
     fun validacaoDeLogin(v: View){

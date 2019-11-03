@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "empresas")
 @PrimaryKeyJoinColumn(name = "idUsuario")
-public class Empresa extends Usuario{
+public class Empresa{
 	
 	@Id @JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
