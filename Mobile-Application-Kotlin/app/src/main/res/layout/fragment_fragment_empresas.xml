@@ -3,12 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.fragmentEmpresas">
+    tools:context=".fragments.fragmentEmpresas"
+    android:background="#202136">
 
-    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#FFF"
+        />
+
+    <ImageView
+        android:layout_width="317dp"
+        android:layout_height="41dp"
+        android:src="@drawable/ic_domain_white_24dp"
+        android:layout_marginTop="3dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Empresas"
+        android:textColor="#202136"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="12dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#4DEE78"
+        android:layout_marginTop="45dp"/>
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="segunda tela" />
+        android:text="segunda tela"
+        android:layout_marginTop="90dp"
+        android:textColor="#FFF" />
 
 </FrameLayout>
