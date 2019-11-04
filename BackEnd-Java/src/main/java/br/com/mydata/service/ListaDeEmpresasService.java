@@ -41,7 +41,7 @@ public class ListaDeEmpresasService {
 
 			InformaçõesRetornadasPelaEmpresaSobreUsuario informacoesDaEmpresa = (InformaçõesRetornadasPelaEmpresaSobreUsuario) restConection.post(url, cpf, new InformaçõesRetornadasPelaEmpresaSobreUsuario());
 
-			if (Objects.nonNull(informacoesDaEmpresa.getInformaçõesDoUsuario())) {
+			if (!informacoesDaEmpresa.getInformaçõesDoUsuario().isEmpty()){
 				listaDeInformações.add(informacoesDaEmpresa);
 			}
 		}
