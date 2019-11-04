@@ -24,12 +24,15 @@ public class Empresa{
 	public Empresa() {
 		
 	}
-	
-	public Empresa(String razaoSocial, String cnpj) {
+
+	public Empresa(String razaoSocial, String cnpj, String urlDeConexao) {
 		super();
 		this.razaoSocial = razaoSocial;
 		this.cnpj = cnpj;
+		this.urlDeConexao = urlDeConexao;
 	}
+
+
 
 	public Long getId() {
 		return id;
