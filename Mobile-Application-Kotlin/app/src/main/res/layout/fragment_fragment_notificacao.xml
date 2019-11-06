@@ -3,12 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.fragmentNotificacao">
+    tools:context=".fragments.fragmentNotificacao"
+    android:background="#202136">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="terceira tela" />
+        android:layout_height="5dp"
+        android:background="#4DEE78"
+        />
+
+    <TextView
+        android:layout_width="109dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="70dp"
+        android:background="#707070"
+        android:paddingLeft="15dp"
+        android:text="Conta"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        android:clickable="true"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/ic_account_balance_black_24dp" />
 
 </FrameLayout>
