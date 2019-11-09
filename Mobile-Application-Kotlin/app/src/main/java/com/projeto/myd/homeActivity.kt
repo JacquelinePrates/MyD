@@ -2,6 +2,7 @@ package com.projeto.myd
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import com.projeto.myd.fragments.fragmentDashboard
 import com.projeto.myd.fragments.fragmentEmpresas
 import com.projeto.myd.fragments.fragmentNotificacao
 import com.projeto.myd.fragments.fragmentPerfil
+import com.projeto.myd.fragments.fragmentGrupos
 
 class homeActivity : AppCompatActivity() {
 
@@ -17,7 +19,8 @@ class homeActivity : AppCompatActivity() {
     val fragment2: Fragment = fragmentEmpresas()
     val fragment3: Fragment = fragmentNotificacao()
     val fragment4: Fragment = fragmentPerfil()
-    val fm = getSupportFragmentManager()
+    val fragmentGrupos: Fragment = fragmentGrupos()
+    val fm = supportFragmentManager
     var ativo= fragment1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +33,7 @@ class homeActivity : AppCompatActivity() {
         fm.beginTransaction().add(R.id.container, fragment4).hide(fragment4).commit()
         fm.beginTransaction().add(R.id.container, fragment3).hide(fragment3).commit()
         fm.beginTransaction().add(R.id.container, fragment2).hide(fragment2).commit()
+        fm.beginTransaction().add(R.id.container, fragmentGrupos).hide(fragmentGrupos).commit()
         fm.beginTransaction().add(R.id.container, fragment1).commit()
     }
 
@@ -61,5 +65,11 @@ class homeActivity : AppCompatActivity() {
             }
             return false
         }
+    }
+
+    fun trocarParaGrupos(v: View){
+         //fm.beginTransaction().replace(R.id.container,fragmentGrupos).commit()
+        fm.beginTransaction().hide(ativo).show(fragmentGrupos).commit()
+        ativo = fragmentGrupos
     }
 }
