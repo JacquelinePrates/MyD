@@ -39,7 +39,8 @@ class homeActivity : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = object:
         BottomNavigationView.OnNavigationItemSelectedListener {
-        override fun onNavigationItemSelected(@NonNull item: MenuItem):Boolean {
+        // Elias esse @NonNull esta dando erro aqui, vou ter que tirar
+        override fun onNavigationItemSelected(item: MenuItem):Boolean {
             when (item.getItemId()) {
                 R.id.navigation_home -> {
                     fm.beginTransaction().hide(ativo).show(fragment1).commit()

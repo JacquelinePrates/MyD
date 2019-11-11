@@ -35,11 +35,10 @@ class loginActivity : AppCompatActivity() {
         call.enqueue(object : Callback<Usuario?> {
             override fun onResponse(call: Call<Usuario?>, response: Response<Usuario?>) {
                 response?.body()?.let {
-                    val email = it.email
-                    val senha = it.senha
+                    val id = it.id
 
                     if (it.valido){
-                        irParaHome(email, senha)
+                        irParaHome(id)
                     }else{
                         usuarioInvalido()
                     }
@@ -58,12 +57,11 @@ class loginActivity : AppCompatActivity() {
         Toast.makeText(this, "Usuario invalido", Toast.LENGTH_LONG).show()
     }
 
-    fun irParaHome(email : String, senha : String) {
+    fun irParaHome(id : Long) {
 
         var telaHome = Intent(this, homeActivity::class.java)
 
-        telaHome.putExtra("email", email)
-        telaHome.putExtra("senha", senha)
+        telaHome.putExtra("id", id)
 
         startActivity(telaHome)
     }

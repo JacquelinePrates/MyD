@@ -1,4 +1,4 @@
-package br.com.mydata.model;
+package com.tt.model;
 
 public class InformacoesUsuario {
 

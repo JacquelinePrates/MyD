@@ -14,11 +14,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @PrimaryKeyJoinColumn(name = "idUsuario")
 public class Empresa{
 	
-	@Id @JsonIgnore
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String razaoSocial;
 	private String cnpj;
+	@JsonIgnore
 	private String urlDeConexao;
 	
 	public Empresa() {

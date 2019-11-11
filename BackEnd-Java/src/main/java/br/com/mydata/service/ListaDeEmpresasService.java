@@ -3,14 +3,13 @@ package br.com.mydata.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import br.com.mydata.model.Empresa;
-import br.com.mydata.model.InformaçõesRetornadasPelaEmpresaSobreUsuario;
+import br.com.mydata.model.InformacoesUsuario;
 import br.com.mydata.model.Usuario;
 import br.com.mydata.repository.EmpresaRepository;
 import br.com.mydata.repository.UsuarioRepository;
@@ -26,23 +25,24 @@ public class ListaDeEmpresasService {
 	UsuarioRepository usuarioRepository;
 
 	@Autowired
-	RestConection<InformaçõesRetornadasPelaEmpresaSobreUsuario> restConection;
+	RestConection restConection;
 
-	public List<InformaçõesRetornadasPelaEmpresaSobreUsuario> todasInformaçõesDoUsuarioNasEmpresas(Usuario usuario) {
-		List<InformaçõesRetornadasPelaEmpresaSobreUsuario> listaDeInformações = new ArrayList<InformaçõesRetornadasPelaEmpresaSobreUsuario>();
+	public List<Empresa> todasInformaçõesDoUsuarioNasEmpresas(Long id) {
+		List<Empresa> listaDeInformações = new ArrayList<Empresa>();
 
 		List<Empresa> todasEmpresas = empresaRepository.findAll();
-		Usuario usuarioDoBanco = usuarioRepository.findByEmailAndSenha(usuario.getEmail(), usuario.getSenha());
+		Optional<Usuario> optionalUsuarioDoBanco = usuarioRepository.findById(id);
+		Usuario usuarioDoBanco = optionalUsuarioDoBanco.get();
 
 		String cpf = usuarioDoBanco.getCpf();
 
 		for (Empresa empresa : todasEmpresas) {
 			String url = empresa.getUrlDeConexao();
 
-			InformaçõesRetornadasPelaEmpresaSobreUsuario informacoesDaEmpresa = (InformaçõesRetornadasPelaEmpresaSobreUsuario) restConection.post(url, cpf, new InformaçõesRetornadasPelaEmpresaSobreUsuario());
+			InformacoesUsuario informacoesDaEmpresa = (InformacoesUsuario) restConection.post(url, cpf, new InformacoesUsuario());
 
-			if (!informacoesDaEmpresa.getInformaçõesDoUsuario().isEmpty()){
-				listaDeInformações.add(informacoesDaEmpresa);
+			if (Objects.nonNull(informacoesDaEmpresa)){
+				listaDeInformações.add(empresa);
 			}
 		}
 
