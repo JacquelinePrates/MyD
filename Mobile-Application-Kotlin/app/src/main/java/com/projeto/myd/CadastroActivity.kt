@@ -1,5 +1,6 @@
 package com.projeto.myd
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -57,6 +58,13 @@ class CadastroActivity : AppCompatActivity() {
 
     fun toast(texto : String){
         Toast.makeText(this, texto, Toast.LENGTH_LONG).show();
+    }
+
+    fun irParaLogin(component:View){
+
+        val login = Intent(this, loginActivity:: class.java)
+
+        startActivity(login)
     }
 
 

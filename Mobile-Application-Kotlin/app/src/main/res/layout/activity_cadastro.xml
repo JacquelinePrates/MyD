@@ -115,7 +115,8 @@
         <TextView
             android:id="@+id/TextViewJaTemUmaConta"
             style="@style/styleTextViewLoginCadastro"
-            android:text="@string/j_tem_uma_conta" />
+            android:text="@string/j_tem_uma_conta"
+            android:onClick="irParaLogin"/>
     </LinearLayout>
 
     <LinearLayout

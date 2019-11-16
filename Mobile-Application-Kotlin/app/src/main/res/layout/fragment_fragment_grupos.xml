@@ -7,7 +7,193 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="acho que to na tela certa" />
+        android:layout_height="5dp"
+        android:background="#4DEE78"
+        />
+
+    <TextView
+        android:layout_width="140dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="70dp"
+        android:background="#707070"
+        android:paddingLeft="15dp"
+        android:text="Conta"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        android:clickable="true"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/ic_account_balance_black_24dp" />
+
+    <TextView android:layout_width="140dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="150dp"
+        android:background="#707070"
+        android:paddingLeft="15dp"
+        android:text="Nubank"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:clickable="true"
+        />
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="160dp"
+        android:src="@drawable/ic_account_balance_black_24dp"
+        />
+
+    <TextView android:layout_width="140dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="70dp"
+        android:paddingLeft="15dp"
+        android:text="Itau"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:background="#707070"
+
+        />
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/ic_account_balance_black_24dp"
+        />
+
+
+    <TextView android:layout_width="140dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="150dp"
+        android:paddingLeft="15dp"
+        android:text="Digital"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:background="#707070"
+
+        />
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="160dp"
+        android:src="@drawable/ic_account_balance_black_24dp"
+
+        />
+
+    <TextView android:layout_width="140dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="230dp"
+        android:background="#707070"
+        android:paddingLeft="15dp"
+        android:text="Nubank"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:clickable="true"
+        />
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="240dp"
+        android:src="@drawable/ic_account_balance_black_24dp"
+
+        />
+
+
+    <TextView android:layout_width="140dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="230dp"
+        android:paddingLeft="15dp"
+        android:text="C6"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:background="#707070"
+
+        />
+
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="240dp"
+        android:src="@drawable/ic_account_balance_black_24dp"
+
+        />
+
+    <TextView android:layout_width="140dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="307dp"
+        android:background="#707070"
+        android:paddingLeft="15dp"
+        android:text="Inter"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:clickable="true"
+        />
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="317dp"
+        android:src="@drawable/ic_account_balance_black_24dp"
+
+        />
+
+    <TextView android:layout_width="140dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="307dp"
+        android:paddingLeft="15dp"
+        android:text="Verde"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:background="#707070"
+
+        />
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="317dp"
+        android:src="@drawable/ic_account_balance_black_24dp"
+
+        />
 
 </FrameLayout>

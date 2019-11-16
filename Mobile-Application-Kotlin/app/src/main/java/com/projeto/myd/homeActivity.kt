@@ -33,7 +33,7 @@ class homeActivity : AppCompatActivity() {
         fm.beginTransaction().add(R.id.container, fragment4).hide(fragment4).commit()
         fm.beginTransaction().add(R.id.container, fragment3).hide(fragment3).commit()
         fm.beginTransaction().add(R.id.container, fragment2).hide(fragment2).commit()
-        fm.beginTransaction().add(R.id.container, fragmentGrupos).hide(fragmentGrupos).commit()
+        //fm.beginTransaction().add(R.id.container, fragmentGrupos).hide(fragmentGrupos).commit()
         fm.beginTransaction().add(R.id.container, fragment1).commit()
     }
 
@@ -42,23 +42,23 @@ class homeActivity : AppCompatActivity() {
         override fun onNavigationItemSelected(@NonNull item: MenuItem):Boolean {
             when (item.getItemId()) {
                 R.id.navigation_home -> {
-                    fm.beginTransaction().hide(ativo).show(fragment1).commit()
+                    fm.beginTransaction().setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out).hide(ativo).show(fragment1).commit()
                     ativo = fragment1
 
                     return true
                 }
                 R.id.navigation_empresas -> {
-                    fm.beginTransaction().hide(ativo).show(fragment2).commit()
+                    fm.beginTransaction().setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out).hide(ativo).show(fragment2).commit()
                     ativo = fragment2
                     return true
                 }
                 R.id.navigation_notificacao -> {
-                    fm.beginTransaction().hide(ativo).show(fragment3).commit()
+                    fm.beginTransaction().setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out).hide(ativo).show(fragment3).commit()
                     ativo = fragment3
                     return true
                 }
                 R.id.navigation_perfil -> {
-                    fm.beginTransaction().hide(ativo).show(fragment4).commit()
+                    fm.beginTransaction().setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out).hide(ativo).show(fragment4).commit()
                     ativo = fragment4
                     return true
                 }
@@ -68,8 +68,8 @@ class homeActivity : AppCompatActivity() {
     }
 
     fun trocarParaGrupos(v: View){
-         //fm.beginTransaction().replace(R.id.container,fragmentGrupos).commit()
-        fm.beginTransaction().hide(ativo).show(fragmentGrupos).commit()
+        fm.beginTransaction().setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out).hide(ativo).show(fragmentGrupos).commit()
+        //fm.beginTransaction().hide(ativo).show(fragmentGrupos).commit()
         ativo = fragmentGrupos
     }
 }
