@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/GITClones-MyD-Mobile-Application-Kotlin.iml" filepath="$PROJECT_DIR$/GITClones-MyD-Mobile-Application-Kotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mobile-Application-Kotlin.iml" filepath="$PROJECT_DIR$/Mobile-Application-Kotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/Mobile-Application-Kotlin-app.iml" filepath="$PROJECT_DIR$/app/Mobile-Application-Kotlin-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyD-Mobile-Application-Kotlin.iml" filepath="$PROJECT_DIR$/MyD-Mobile-Application-Kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/MyD-Mobile-Application-Kotlin-app.iml" filepath="$PROJECT_DIR$/app/MyD-Mobile-Application-Kotlin-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

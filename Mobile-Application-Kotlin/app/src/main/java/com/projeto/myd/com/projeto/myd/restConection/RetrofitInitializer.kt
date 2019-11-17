@@ -9,7 +9,7 @@ class RetrofitInitializer {
 
    private val retrofit =
         Retrofit.Builder()
-            .baseUrl("http://192.168.0.4:8080") // URL do servidor, deve ser trocado pelo IPv4 do seu pc, comando ipconfig no cmd
+            .baseUrl("http://192.168.1.56:8080") // URL do servidor, deve ser trocado pelo IPv4 do seu pc, comando ipconfig no cmd
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
