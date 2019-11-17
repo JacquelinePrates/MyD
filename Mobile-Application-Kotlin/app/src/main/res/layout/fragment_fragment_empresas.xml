@@ -52,7 +52,8 @@
         android:layout_width="match_parent"
         android:layout_height="669dp"
         android:textColor="#FFF"
-        app:layout_constraintTop_toBottomOf="@+id/divLinhaVerde" />
+        app:layout_constraintTop_toBottomOf="@+id/divLinhaVerde"
+        tools:layout_editor_absoluteX="0dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -78,6 +79,7 @@
         app:layout_constraintTop_toTopOf="@id/divLinhaVerde"
         app:layout_constraintVertical_bias="0.070"
         android:onClick="trocarParaGrupos"
+
         />
 
     <ImageView
@@ -86,12 +88,13 @@
         android:src="@mipmap/empresacoca"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.630"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.120"
+        app:layout_constraintStart_toEndOf="@+id/segundaEmpresa"
         app:layout_constraintTop_toTopOf="@id/divLinhaVerde"
         app:layout_constraintVertical_bias="0.070" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/empresaporto"
@@ -105,13 +108,13 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:src="@mipmap/empresamc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.890"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/divLinhaVerde"
-        app:layout_constraintVertical_bias="0.210"
-        android:layout_marginTop="25dp" />
+        app:layout_constraintVertical_bias="0.209" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
