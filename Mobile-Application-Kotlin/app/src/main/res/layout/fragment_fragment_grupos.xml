@@ -25,6 +25,7 @@
         android:textColor="#FFF"
         android:textStyle="bold"
         android:clickable="true"
+        android:onClick="trocarParaAgrupador"
         />
 
     <ImageView

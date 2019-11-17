@@ -12,6 +12,7 @@ import com.projeto.myd.fragments.fragmentEmpresas
 import com.projeto.myd.fragments.fragmentNotificacao
 import com.projeto.myd.fragments.fragmentPerfil
 import com.projeto.myd.fragments.fragmentGrupos
+import com.projeto.myd.fragments.fragmentAgrupador
 
 class homeActivity : AppCompatActivity() {
 
@@ -20,6 +21,7 @@ class homeActivity : AppCompatActivity() {
     val fragment3: Fragment = fragmentNotificacao()
     val fragment4: Fragment = fragmentPerfil()
     val fragmentGrupos: Fragment = fragmentGrupos()
+    val fragmentAgrupador: Fragment = fragmentAgrupador()
     val fm = supportFragmentManager
     var ativo= fragment1
 
@@ -34,6 +36,7 @@ class homeActivity : AppCompatActivity() {
         fm.beginTransaction().add(R.id.container, fragment3).hide(fragment3).commit()
         fm.beginTransaction().add(R.id.container, fragment2).hide(fragment2).commit()
         fm.beginTransaction().add(R.id.container, fragmentGrupos).hide(fragmentGrupos).commit()
+        fm.beginTransaction().add(R.id.container, fragmentAgrupador).hide(fragmentAgrupador).commit()
         fm.beginTransaction().add(R.id.container, fragment1).commit()
     }
 
@@ -69,7 +72,12 @@ class homeActivity : AppCompatActivity() {
 
     fun trocarParaGrupos(v: View){
         fm.beginTransaction().setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out).hide(ativo).show(fragmentGrupos).commit()
-        //fm.beginTransaction().hide(ativo).show(fragmentGrupos).commit()
         ativo = fragmentGrupos
     }
+
+    fun trocarParaAgrupador (v:View){
+        fm.beginTransaction().setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out).hide(ativo).show(fragmentAgrupador).commit()
+        ativo = fragmentAgrupador
+    }
+
 }
