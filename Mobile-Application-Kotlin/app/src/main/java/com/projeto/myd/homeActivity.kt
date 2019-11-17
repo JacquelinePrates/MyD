@@ -72,4 +72,20 @@ class homeActivity : AppCompatActivity() {
         //fm.beginTransaction().hide(ativo).show(fragmentGrupos).commit()
         ativo = fragmentGrupos
     }
+
+    fun retornoParaEmpresa(v: View){
+        fm.beginTransaction().setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out).hide(ativo).show(fragment2).commit()
+        ativo = fragment2
+    }
+
+    fun retornoParaEmpresa(){
+        fm.beginTransaction().setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out).hide(ativo).show(fragment2).commit()
+        ativo = fragment2
+    }
+
+    public override fun onBackPressed() {
+        if (ativo == fragmentGrupos){
+            retornoParaEmpresa()
+        }
+    }
 }
