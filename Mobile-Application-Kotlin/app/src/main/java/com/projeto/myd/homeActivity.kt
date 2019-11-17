@@ -33,7 +33,7 @@ class homeActivity : AppCompatActivity() {
         fm.beginTransaction().add(R.id.container, fragment4).hide(fragment4).commit()
         fm.beginTransaction().add(R.id.container, fragment3).hide(fragment3).commit()
         fm.beginTransaction().add(R.id.container, fragment2).hide(fragment2).commit()
-        //fm.beginTransaction().add(R.id.container, fragmentGrupos).hide(fragmentGrupos).commit()
+        fm.beginTransaction().add(R.id.container, fragmentGrupos).hide(fragmentGrupos).commit()
         fm.beginTransaction().add(R.id.container, fragment1).commit()
     }
 
