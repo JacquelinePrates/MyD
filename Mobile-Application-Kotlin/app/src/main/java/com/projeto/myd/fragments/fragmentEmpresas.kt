@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 
 import com.projeto.myd.R
+import kotlinx.android.synthetic.main.fragment_fragment_empresas.*
 
 class fragmentEmpresas : Fragment() {
 

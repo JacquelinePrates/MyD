@@ -13,7 +13,7 @@ import br.com.mydata.utilities.Criptografia;
 
 @SpringBootApplication
 public class MyDJavaApplication {
-
+	
 	public static void main(String[] args) {
 		SpringApplication.run(MyDJavaApplication.class, args);
 	}
@@ -29,7 +29,7 @@ public class MyDJavaApplication {
 	@Bean
 	CommandLineRunner criaEmpresaNoBanco (EmpresaRepository empresaRepository) {
 		return args -> {
-			empresaRepository.save(new Empresa("Segur - Seguradora", "59.414.208/0001-08", "http://localhost:8081/informacao"));
+			empresaRepository.save(new Empresa("Segur - Banco/Seguradora", "59.414.208/0001-08", "http://localhost:8081/informacao"));
 		};
 		
 	}

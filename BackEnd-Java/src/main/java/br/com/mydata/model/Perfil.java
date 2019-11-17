@@ -2,36 +2,18 @@ package br.com.mydata.model;
 
 public class Perfil {
 	
-	private String email;
-	private String senha;
-	private String nome;
-	private String cpf;
-	
-	public String getEmail() {
-		return email;
+	private long numeroDeFilhos;
+	private long scoreSerasa;
+	public long getNumeroDeFilhos() {
+		return numeroDeFilhos;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setNumeroDeFilhos(long numeroDeFilhos) {
+		this.numeroDeFilhos = numeroDeFilhos;
 	}
-	public String getSenha() {
-		return senha;
+	public long getScoreSerasa() {
+		return scoreSerasa;
 	}
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setScoreSerasa(long scoreSerasa) {
+		this.scoreSerasa = scoreSerasa;
 	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getCpf() {
-		return cpf;
-	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-	
-	
-
 }

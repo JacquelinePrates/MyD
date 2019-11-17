@@ -29,7 +29,7 @@ public class GruposService {
 		Empresa empresa =  optionalEmpresa.get();
 		
 		String url = empresa.getUrlDeConexao();
-		String urlCompleta = url + "/informacao";
+		String urlCompleta = url;
 		
 		Optional<Usuario> optionalUsuario = usuarioRepository.findById(idUsuario);
 		Usuario usuario = optionalUsuario.get();

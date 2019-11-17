@@ -1,5 +1,7 @@
 package br.com.mydata.service;
 
+import java.util.Objects;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +15,11 @@ public class CadastroService {
 	UsuarioRepository repository;
 	
 	public Usuario cadastraUsuario(Usuario usuario) {
+		
+		if(Objects.isNull(repository.findByCpf(usuario.getCpf()))) {
 		repository.save(usuario);
-		return repository.getOne(usuario.getId());
+		}
+		return repository.findByCpf(usuario.getCpf());
 	}
 
 }

@@ -92,8 +92,7 @@
                 <EditText
                     android:id="@+id/EditTextCadastroConfimarSenha"
                     style="@style/styleEditTextLoginCadastro"
-                    android:hint="@string/confirmar_senha"
-                    android:inputType="number" />
+                    android:hint="@string/confirmar_senha" />
             </LinearLayout>
 
             <LinearLayout style="@style/styleLinearLayoutDivisorias"></LinearLayout>

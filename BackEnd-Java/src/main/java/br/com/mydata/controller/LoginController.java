@@ -22,4 +22,6 @@ public class LoginController {
 	public Usuario login(@RequestBody Usuario usuario) {
 		return service.login(usuario);
 	}
+	
+	
 }

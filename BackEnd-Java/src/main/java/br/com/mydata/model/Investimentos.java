@@ -1,19 +1,18 @@
 package br.com.mydata.model;
 
 public class Investimentos {
-	private String nome;
-	private String numero;
-	public String getNome() {
-		return nome;
+	private String tipo;
+	private String quantia;
+	public String getTipo() {
+		return tipo;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
-	public String getNumero() {
-		return numero;
+	public String getQuantia() {
+		return quantia;
 	}
-	public void setNumero(String numero) {
-		this.numero = numero;
+	public void setQuantia(String quantia) {
+		this.quantia = quantia;
 	}
-
 }

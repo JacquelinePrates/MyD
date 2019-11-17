@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -14,11 +15,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @PrimaryKeyJoinColumn(name = "idUsuario")
 public class Empresa{
 	
-	@Id @JsonIgnore
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String razaoSocial;
 	private String cnpj;
+	@JsonIgnore
 	private String urlDeConexao;
 	
 	public Empresa() {
@@ -64,5 +66,5 @@ public class Empresa{
 
 	public void setUrlDeConexao(String urlDeConexao) {
 		this.urlDeConexao = urlDeConexao;
-	}	
+	}
 }

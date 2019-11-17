@@ -18,6 +18,7 @@
         android:background="#4DEE78" />
 
     <ImageView
+        android:id="@+id/iconEmpresa"
         android:layout_marginTop="7dp"
         android:layout_marginLeft="135dp"
         android:layout_width="30dp"
