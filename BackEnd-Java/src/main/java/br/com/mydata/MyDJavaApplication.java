@@ -13,7 +13,7 @@ import br.com.mydata.utilities.Criptografia;
 
 @SpringBootApplication
 public class MyDJavaApplication {
-
+	
 	public static void main(String[] args) {
 		SpringApplication.run(MyDJavaApplication.class, args);
 	}

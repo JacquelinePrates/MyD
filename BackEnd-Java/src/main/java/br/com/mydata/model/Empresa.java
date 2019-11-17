@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -65,5 +66,5 @@ public class Empresa{
 
 	public void setUrlDeConexao(String urlDeConexao) {
 		this.urlDeConexao = urlDeConexao;
-	}	
+	}
 }
