@@ -1,27 +1,35 @@
 package br.com.mydata.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
-
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Entity
 @Table(name = "empresas")
 @PrimaryKeyJoinColumn(name = "idUsuario")
 public class Empresa{
 	
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String razaoSocial;
 	private String cnpj;
+	
 	@JsonIgnore
 	private String urlDeConexao;
+	
+	@JsonInclude @Transient
+	private String urlDaLogo;
+	@JsonInclude @Transient
+	private List<Informacao> listaDeInformacoes;
 	
 	public Empresa() {
 		
@@ -66,5 +74,21 @@ public class Empresa{
 
 	public void setUrlDeConexao(String urlDeConexao) {
 		this.urlDeConexao = urlDeConexao;
+	}
+
+	public String getUrlDaLogo() {
+		return urlDaLogo;
+	}
+
+	public void setUrlDaLogo(String urlDaLogo) {
+		this.urlDaLogo = urlDaLogo;
+	}
+
+	public List<Informacao> getListaDeInformacoes() {
+		return listaDeInformacoes;
+	}
+
+	public void setListaDeInformacoes(List<Informacao> listaDeInformacoes) {
+		this.listaDeInformacoes = listaDeInformacoes;
 	}
 }

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.mydata.model.Empresa;
-import br.com.mydata.model.InformacoesUsuario;
+import br.com.mydata.model.Informacao;
 import br.com.mydata.service.ListaDeEmpresasService;
 
 @RestController

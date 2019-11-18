@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.mydata.model.Empresa;
-import br.com.mydata.model.InformacoesUsuario;
+import br.com.mydata.model.Informacao;
 import br.com.mydata.model.Usuario;
 import br.com.mydata.repository.EmpresaRepository;
 import br.com.mydata.repository.UsuarioRepository;
@@ -39,7 +39,7 @@ public class ListaDeEmpresasService {
 		for (Empresa empresa : todasEmpresas) {
 			String url = empresa.getUrlDeConexao();
 
-			InformacoesUsuario informacoesDaEmpresa = (InformacoesUsuario) restConection.post(url, cpf, new InformacoesUsuario());
+			Informacao informacoesDaEmpresa = (Informacao) restConection.post(url, cpf, new Informacao());
 
 			if (Objects.nonNull(informacoesDaEmpresa)){
 				listaDeInformações.add(empresa);
