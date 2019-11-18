@@ -28,7 +28,7 @@ public class ListaDeEmpresasService {
 	RestConection restConection;
 
 	public List<Empresa> todasInformaçõesDoUsuarioNasEmpresas(Long id) {
-		List<Empresa> listaDeInformações = new ArrayList<Empresa>();
+		List<Empresa> listaDeInformacoes = new ArrayList<Empresa>();
 
 		List<Empresa> todasEmpresas = empresaRepository.findAll();
 		Optional<Usuario> optionalUsuarioDoBanco = usuarioRepository.findById(id);
@@ -39,14 +39,15 @@ public class ListaDeEmpresasService {
 		for (Empresa empresa : todasEmpresas) {
 			String url = empresa.getUrlDeConexao();
 
-			Informacao informacoesDaEmpresa = (Informacao) restConection.post(url, cpf, new Informacao());
-
-			if (Objects.nonNull(informacoesDaEmpresa)){
-				listaDeInformações.add(empresa);
+			Empresa informacoesDaEmpresa = (Empresa) restConection.post(url, cpf, new Empresa());
+			
+			empresa.setUrlDaLogo(informacoesDaEmpresa.getUrlDaLogo());
+			if (Objects.nonNull(informacoesDaEmpresa.getListaDeInformacoes())){
+				listaDeInformacoes.add(empresa);
 			}
 		}
 
-		return listaDeInformações;
+		return listaDeInformacoes;
 
 	}
 

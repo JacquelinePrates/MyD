@@ -23,9 +23,9 @@ public class ListaDeEmpresasController {
 	@Autowired
 	ListaDeEmpresasService service;
 
-	@GetMapping("/todas/informacoes")
-	public List<Empresa> todasEmpresasQuePossuemInformacoes(@RequestParam long id) {
-		return service.todasInformaçõesDoUsuarioNasEmpresas(id);
+	@GetMapping("/todas/usuarios/{usuario}")
+	public List<Empresa> todasEmpresasQuePossuemInformacoes(@PathVariable long usuario) {
+		return service.todasInformaçõesDoUsuarioNasEmpresas(usuario);
 	}
 	 
 }

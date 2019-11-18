@@ -1,20 +1,19 @@
 package com.projeto.myd.com.projeto.myd.restConection.asyncTask
 
 import android.os.AsyncTask
-import com.projeto.myd.com.projeto.myd.model.InformacoesUsuario
-import com.projeto.myd.com.projeto.myd.restConection.Service.CadastroRequisicoes
-import com.projeto.myd.com.projeto.myd.restConection.Service.GruposRequisicoes
+import com.projeto.myd.com.projeto.myd.model.Empresa
+import com.projeto.myd.com.projeto.myd.restConection.Service.EmpresasRequisicoes
 import feign.Feign
 import feign.gson.GsonDecoder
 import feign.gson.GsonEncoder
 import java.lang.Exception
 
-class GruposTask : AsyncTask <String, Void, InformacoesUsuario?>(){
-    override fun doInBackground(vararg params: String?): InformacoesUsuario? {
+class EmpresaTask : AsyncTask <String, Void, Empresa?>(){
+    override fun doInBackground(vararg params: String?): Empresa? {
         val request = Feign.builder()
             .encoder(GsonEncoder())
             .decoder(GsonDecoder())
-            .target(GruposRequisicoes::class.java, "http://192.168.1.56:8080")
+            .target(EmpresasRequisicoes::class.java, "http://192.168.1.56:8080")
 
         try {
             return request.listarInformacoesDaEmpresa(params[0], params[1])
