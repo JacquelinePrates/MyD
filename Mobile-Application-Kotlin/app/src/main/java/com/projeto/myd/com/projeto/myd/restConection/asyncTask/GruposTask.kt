@@ -14,7 +14,7 @@ class GruposTask : AsyncTask <String, Void, InformacoesUsuario?>(){
         val request = Feign.builder()
             .encoder(GsonEncoder())
             .decoder(GsonDecoder())
-            .target(GruposRequisicoes::class.java, "http://192.168.0.5:8080")
+            .target(GruposRequisicoes::class.java, "http://10.3.1.253:8080")
 
         try {
             return request.listarInformacoesDaEmpresa(params[0], params[1])
