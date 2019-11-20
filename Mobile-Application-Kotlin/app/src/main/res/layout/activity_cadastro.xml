@@ -53,7 +53,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_perm_identity_black_24dp" />
+                    android:src="@drawable/ic_perm_identity_white_24dp" />
 
                 <EditText
                     android:id="@+id/EditTextCadastrocPF"
@@ -76,7 +76,8 @@
                     android:id="@+id/EditTextCadastroSenha"
                     style="@style/styleEditTextLoginCadastro"
                     android:hint="@string/senha"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:inputType="textPassword"/>
             </LinearLayout>
 
             <LinearLayout style="@style/styleLinearLayoutDivisorias"></LinearLayout>
@@ -92,7 +93,8 @@
                 <EditText
                     android:id="@+id/EditTextCadastroConfimarSenha"
                     style="@style/styleEditTextLoginCadastro"
-                    android:hint="@string/confirmar_senha" />
+                    android:hint="@string/confirmar_senha"
+                    android:inputType="textPassword"/>
             </LinearLayout>
 
             <LinearLayout style="@style/styleLinearLayoutDivisorias"></LinearLayout>

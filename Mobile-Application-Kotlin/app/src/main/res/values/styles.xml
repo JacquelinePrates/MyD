@@ -14,6 +14,13 @@
         <item name="android:windowFullscreen">false</item>
     </style>
 
+    <style name="styleEditTextPerfil">
+        <item name="android:colorControlNormal">#ff0000</item>
+        <item name="colorControlActivated">#00ff00</item>
+        <item name="colorControlHighlight">@color/accent_material_light</item>
+
+    </style>
+
     <style name="styleEditTextLoginCadastro">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
