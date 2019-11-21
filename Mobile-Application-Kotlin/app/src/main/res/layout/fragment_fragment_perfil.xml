@@ -1,14 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#202136"
     tools:context=".fragments.fragmentPerfil">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/divTitulo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="quarta tela" />
+        android:layout_height="45dp"
+        android:background="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:src="@drawable/ic_perm_identity_black_24dp"
+        app:layout_constraintBottom_toTopOf="@+id/divLinhaVerde"
+        app:layout_constraintEnd_toStartOf="@+id/tvtituloPerfil"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/divTitulo"
+        app:layout_constraintVertical_bias="0.571" />
+
+    <TextView
+        android:id="@+id/tvtituloPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Perfil"
+        android:textColor="#202136"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/divLinhaVerde"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divTitulo" />
+
+    <TextView
+        android:id="@+id/divLinhaVerde"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#4DEE78"
+        app:layout_constraintTop_toBottomOf="@id/divTitulo" />
+
+    <ImageView
+        android:id="@+id/ivPerfil"
+        android:layout_width="197dp"
+        android:layout_height="160dp"
+        android:src="@drawable/ic_account_circle_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divLinhaVerde" />
+
+    <TextView
+        android:id="@+id/editText5"
+        android:layout_width="293dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittextperfil"
+        android:gravity="center"
+        android:text="EMAIL"
+        android:textColor="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPerfil" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="293dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittextperfil"
+        android:gravity="center"
+        android:text="NOME"
+        android:textColor="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="293dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittextperfil"
+        android:gravity="center"
+        android:text="CPF"
+        android:textColor="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="293dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittextperfil"
+        android:gravity="center"
+        android:text="SENHA"
+        android:textColor="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="293dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittextperfil"
+        android:gravity="center"
+        android:text=" CONFIRMAR SENHA"
+        android:textColor="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
