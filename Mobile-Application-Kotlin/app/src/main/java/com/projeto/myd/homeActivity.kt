@@ -1,10 +1,17 @@
 package com.projeto.myd
 
+import android.content.Intent
+import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.projeto.myd.com.projeto.myd.model.Empresa
 import com.projeto.myd.com.projeto.myd.restConection.asyncTask.EmpresaTask
@@ -15,6 +22,10 @@ import com.projeto.myd.fragments.fragmentNotificacao
 import com.projeto.myd.fragments.fragmentPerfil
 import com.projeto.myd.fragments.fragmentGrupos
 import com.projeto.myd.fragments.fragmentAgrupador
+import com.projeto.myd.reciclerView.EmpresaRecyclerAdapter
+import kotlinx.android.synthetic.main.fragment_fragment_empresas.*
+import kotlinx.android.synthetic.main.layout_empresas_list_item.view.*
+import java.util.*
 
 class homeActivity : AppCompatActivity() {
 
@@ -30,6 +41,7 @@ class homeActivity : AppCompatActivity() {
     var id: Long? = null
     var idGruposAtual: Int? = null
     var empresasComInformacao : List<Empresa>? = null
+    private lateinit var empresaAdater : EmpresaRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +59,11 @@ class homeActivity : AppCompatActivity() {
         val commit = fm.beginTransaction().add(R.id.container, fragment1).commit()
 
         id = intent.getLongExtra("id", 0)
+
+        val sharedPref: SharedPreferences = getSharedPreferences("myd", 0)
+        val editor = sharedPref.edit()
+        editor.putString("usuarioId", id.toString())
+        editor.apply()
 
         empresasComInformacao = pegaEmpresasComInformacao(id)
     }
@@ -70,6 +87,9 @@ class homeActivity : AppCompatActivity() {
                         android.R.animator.fade_out
                     ).hide(ativo).show(fragment2).commit()
 
+                    initRecyclerView()
+                    addDataSet()
+
                     ativo = fragment2
                     return true
                 }
@@ -92,6 +112,24 @@ class homeActivity : AppCompatActivity() {
             }
             return false
         }
+    }
+
+    fun initRecyclerView(){
+        recycler_view.layoutManager = LinearLayoutManager(this@homeActivity)
+        empresaAdater = EmpresaRecyclerAdapter()
+        recycler_view.adapter = empresaAdater
+    }
+
+    fun addDataSet(){
+        val data = empresasComInformacao
+        empresaAdater.submitList(data!!)
+    }
+
+    fun clickEmpresaRecliclerView(v: View){
+        val id = v.findViewById<TextView>(R.id.empresa_id)
+        val telaInformacoes = Intent(this, VisualizarInformacoes::class.java)
+        telaInformacoes.putExtra("idEmpresa", id.text)
+        startActivity(telaInformacoes)
     }
 
     fun retornoParaEmpresa(v: View) {

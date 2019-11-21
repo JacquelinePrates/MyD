@@ -13,7 +13,7 @@ class TodasEmpresasTask : AsyncTask<Long?, Void, List<Empresa>?>(){
         val request = Feign.builder()
             .encoder(GsonEncoder())
             .decoder(GsonDecoder())
-            .target(EmpresasRequisicoes::class.java, "http://192.168.1.56:8080")
+            .target(EmpresasRequisicoes::class.java, "http://192.168.1.31:8080")
 
         try {
             return request.listarEmpresasComInformacoa(params[0])

@@ -13,9 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CadastroActivity"
-            android:theme="@style/Theme.AppCompat.Light.FullScreen">
-        </activity>
+        <activity android:name=".VisualizarInformacoes"></activity>
+        <activity
+            android:name=".CadastroActivity"
+            android:theme="@style/Theme.AppCompat.Light.FullScreen"></activity>
         <activity
             android:name=".homeActivity"
             android:theme="@style/Theme.AppCompat.Light.FullScreen" />
