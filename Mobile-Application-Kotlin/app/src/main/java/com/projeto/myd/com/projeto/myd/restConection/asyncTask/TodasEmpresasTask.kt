@@ -1,26 +1,27 @@
 package com.projeto.myd.com.projeto.myd.restConection.asyncTask
 
 import android.os.AsyncTask
-import com.projeto.myd.com.projeto.myd.model.Usuario
-import com.projeto.myd.com.projeto.myd.restConection.Service.LoginRequisicoes
+import com.projeto.myd.com.projeto.myd.model.Empresa
+import com.projeto.myd.com.projeto.myd.restConection.Service.EmpresasRequisicoes
 import feign.Feign
 import feign.gson.GsonDecoder
 import feign.gson.GsonEncoder
 import java.lang.Exception
 
-class LoginTask : AsyncTask<Usuario, Void, Usuario>() {
-    override fun doInBackground(vararg params: Usuario?): Usuario? {
+class TodasEmpresasTask : AsyncTask<Long?, Void, List<Empresa>?>(){
+    override fun doInBackground(vararg params: Long?): List<Empresa>? {
         val request = Feign.builder()
             .encoder(GsonEncoder())
             .decoder(GsonDecoder())
-            .target(LoginRequisicoes::class.java, "http://192.168.0.5:8080")
+            .target(EmpresasRequisicoes::class.java, "http://192.168.1.31:8080")
 
         try {
-            return request.logar(params[0]!!)
+            return request.listarEmpresasComInformacoa(params[0])
         }catch (e: Exception){
             println("Requisição Falhou")
             e.printStackTrace()
             return null
         }
     }
+
 }

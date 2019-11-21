@@ -1,23 +1,31 @@
 package com.projeto.myd
 
+import android.content.Intent
+import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.widget.ImageView
-import androidx.annotation.NonNull
+import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.projeto.myd.com.projeto.myd.model.InformacoesUsuario
-import com.projeto.myd.com.projeto.myd.restConection.asyncTask.GruposTask
+import com.projeto.myd.com.projeto.myd.model.Empresa
+import com.projeto.myd.com.projeto.myd.restConection.asyncTask.EmpresaTask
+import com.projeto.myd.com.projeto.myd.restConection.asyncTask.TodasEmpresasTask
 import com.projeto.myd.fragments.fragmentDashboard
 import com.projeto.myd.fragments.fragmentEmpresas
 import com.projeto.myd.fragments.fragmentNotificacao
 import com.projeto.myd.fragments.fragmentPerfil
 import com.projeto.myd.fragments.fragmentGrupos
 import com.projeto.myd.fragments.fragmentAgrupador
+import com.projeto.myd.reciclerView.EmpresaRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_fragment_empresas.*
-import kotlinx.android.synthetic.main.fragment_fragment_grupos.*
+import kotlinx.android.synthetic.main.layout_empresas_list_item.view.*
+import java.util.*
 
 class homeActivity : AppCompatActivity() {
 
@@ -32,8 +40,8 @@ class homeActivity : AppCompatActivity() {
 
     var id: Long? = null
     var idGruposAtual: Int? = null
-
-    var informacoesUsuario : InformacoesUsuario? = null
+    var empresasComInformacao : List<Empresa>? = null
+    private lateinit var empresaAdater : EmpresaRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +59,13 @@ class homeActivity : AppCompatActivity() {
         val commit = fm.beginTransaction().add(R.id.container, fragment1).commit()
 
         id = intent.getLongExtra("id", 0)
+
+        val sharedPref: SharedPreferences = getSharedPreferences("myd", 0)
+        val editor = sharedPref.edit()
+        editor.putString("usuarioId", id.toString())
+        editor.apply()
+
+        empresasComInformacao = pegaEmpresasComInformacao(id)
     }
 
     private val mOnNavigationItemSelectedListener = object :
@@ -72,7 +87,8 @@ class homeActivity : AppCompatActivity() {
                         android.R.animator.fade_out
                     ).hide(ativo).show(fragment2).commit()
 
-                    selecionadorDeUsuario(id)
+                    initRecyclerView()
+                    addDataSet()
 
                     ativo = fragment2
                     return true
@@ -98,21 +114,22 @@ class homeActivity : AppCompatActivity() {
         }
     }
 
-    fun trocarParaGrupos(v:View) {
-        fm.beginTransaction()
-            .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
-            .hide(ativo).show(fragmentGrupos).commit()
+    fun initRecyclerView(){
+        recycler_view.layoutManager = LinearLayoutManager(this@homeActivity)
+        empresaAdater = EmpresaRecyclerAdapter()
+        recycler_view.adapter = empresaAdater
+    }
 
-        if(v.id == -1){
-            idGruposAtual = 1
-        }else if (v.id == 2131230929){
-            idGruposAtual = 2
-        }
+    fun addDataSet(){
+        val data = empresasComInformacao
+        empresaAdater.submitList(data!!)
+    }
 
-        trocaLogoTopo(idGruposAtual)
-        pegaInformacoesDoUsuarioNaquelaEmpresa()
-
-        ativo = fragmentGrupos
+    fun clickEmpresaRecliclerView(v: View){
+        val id = v.findViewById<TextView>(R.id.empresa_id)
+        val telaInformacoes = Intent(this, VisualizarInformacoes::class.java)
+        telaInformacoes.putExtra("idEmpresa", id.text)
+        startActivity(telaInformacoes)
     }
 
     fun retornoParaEmpresa(v: View) {
@@ -136,7 +153,7 @@ class homeActivity : AppCompatActivity() {
         ativo = fragmentGrupos
     }
 
-    public override fun onBackPressed() {
+    override fun onBackPressed() {
         when (ativo) {
             fragmentGrupos -> retornoParaEmpresa()
             fragmentAgrupador -> retornaParaGrupos()
@@ -150,27 +167,9 @@ class homeActivity : AppCompatActivity() {
         ativo = fragmentAgrupador
     }
 
-    fun selecionadorDeUsuario(id: Long?) {
-        if (id == 1L) {
-
-        } else if (id == 2L) {
-            segundaEmpresa.visibility = View.GONE
-        }
-    }
-
-    fun trocaLogoTopo(idGruposAtual: Int?){
-        if(idGruposAtual == 2){
-            val drawable = resources.getDrawable(R.mipmap.empresaporto)
-            iconEmpresa.setImageDrawable(drawable);
-        }else if(idGruposAtual == 1){
-            val drawable = resources.getDrawable(R.mipmap.empresanubank)
-            iconEmpresa.setImageDrawable(drawable);
-        }
-    }
-
-    fun pegaInformacoesDoUsuarioNaquelaEmpresa(){
-        val task = GruposTask()
-        informacoesUsuario = task.execute(id.toString(), idGruposAtual.toString()).get()
+    fun pegaEmpresasComInformacao(usuarioId : Long?): List<Empresa>?{
+        val task = TodasEmpresasTask()
+        return task.execute(usuarioId).get()
     }
 
 }

@@ -29,7 +29,7 @@ public class MyDJavaApplication {
 	@Bean
 	CommandLineRunner criaEmpresaNoBanco (EmpresaRepository empresaRepository) {
 		return args -> {
-			empresaRepository.save(new Empresa("Segur - Banco/Seguradora", "59.414.208/0001-08", "http://localhost:8081/informacao"));
+			empresaRepository.save(new Empresa("Porto Seguro", "59.414.208/0001-08", "http://localhost:8081/informacao"));
 		};
 		
 	}

@@ -1,71 +1,51 @@
 package com.tt.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tt.model.Conta;
-import com.tt.model.Endereco;
-import com.tt.model.InformacoesUsuario;
-import com.tt.model.Investimentos;
-import com.tt.model.Perfil;
-import com.tt.model.Usuario;
+import com.tt.model.Empresa;
+import com.tt.model.Informacao;
 
 @RestController
 @RequestMapping("informacao")
 public class Controller {
 
 	@PostMapping
-	public InformacoesUsuario informacaoSobreUsuario(@RequestBody String cpf){
+	public Empresa informacaoSobreUsuario(@RequestBody String cpf){
 		System.out.println("Controller.informacaoSobreUsuario()");
 		
-		InformacoesUsuario resposta = new InformacoesUsuario();
+		List<Informacao> informacoes = new ArrayList<Informacao>();
+		
+		Empresa empresa = new Empresa();
+		empresa.setCnpj("59.414.208/0001-08");
+		empresa.setRazaoSocial("PortoSeguro");
+		empresa.setUrlDaLogo("https://raw.githubusercontent.com/JacquelinePrates/MyD/criacaoDosReciclerViews/Imagens/porto.png");
 		
 		if(cpf.equals("12345678900")) {
-			Usuario usuario = new Usuario();
-			usuario.setCpf("12345678900");
-			usuario.setEmail("jose@gmail.com");
-			usuario.setNome("Jose Dos Santos");
-			resposta.setUsuario(usuario);
-			
-			Conta conta = new Conta();
-			conta.setCreditoDisponivel("1500");
-			conta.setNomeDaAgencia("Cotia");
-			conta.setNumeroDaAgencia("1234");
-			conta.setNumeroDaConta("12345678-9");
-			conta.setSaldo("564");
-			conta.setTipoDaOperacao("corrente");
-			resposta.setConta(conta);
-			
-			Endereco endereco = new Endereco();
-			endereco.setCep("08440030");
-			endereco.setBairro("Jose Bonifacio");
-			endereco.setCidade("São Paulo");
-			endereco.setLogradouro("São Bolfim");
-			endereco.setNumero("450");
-			endereco.setPais("Brasil");
-			endereco.setUf("SP");
-			resposta.setEndereco(endereco);
-			
-			Investimentos investimentos = new Investimentos();
-			investimentos.setTipo("Tesouro Selic");
-			investimentos.setQuantia("1500");
-			resposta.setInvestimentos(investimentos);
-			
-			Perfil perfil = new Perfil();
-			perfil.setNumeroDeFilhos(1);
-			perfil.setScoreSerasa(540);
-			resposta.setPerfil(perfil);
-			
-			return resposta;
-			
+			Informacao nome = new Informacao("Nome", "Jose Dos Santos");
+			informacoes.add(nome);
+			Informacao email = new Informacao("Email", "jose@gmail.com");
+			informacoes.add(email);
+			Informacao qtdFilhos = new Informacao("Quantidade de filhos", "2");
+			informacoes.add(qtdFilhos);
+			Informacao salario = new Informacao("Salario", "1.500R$");
+			informacoes.add(salario);
+			Informacao score = new Informacao("Score no serasa", "453");
+			informacoes.add(score);
+			Informacao conjuge = new Informacao("Cônjuge", "Maria dos Santos");
+			informacoes.add(conjuge);
+			empresa.setListaDeInformacoes(informacoes);
 		}else if(cpf.equals("9875432100")) {
-			return null;
-			
+				
 		}else {
-			return null;
+			
 		}
+		return empresa;
 	}
 
 }

@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.mydata.model.InformacoesUsuario;
+import br.com.mydata.model.Empresa;
+import br.com.mydata.model.Informacao;
+import br.com.mydata.service.GruposService;
 
 @RestController
 public class GruposController {
@@ -17,17 +19,17 @@ public class GruposController {
 	private GruposService service;
 
 	@GetMapping("empresa/{idEmpresa}/usuario/{idUsuario}")
-	public InformacoesUsuario buscarInformacoesDoUsuarioPorEmpresa(@PathVariable Long idEmpresa, @PathVariable Long idUsuario) {
+	public Empresa buscarInformacoesDoUsuarioPorEmpresa(@PathVariable Long idEmpresa, @PathVariable Long idUsuario) {
 		return service.buscarInformacoesDoUsuarioPorEmpresa(idEmpresa, idUsuario);
 	}
 	
 	@PostMapping("nada")
-	public InformacoesUsuario solicitarAlteracaoDado(@PathVariable Long idEmpresa, @RequestBody InformacoesUsuario informacoesUsuario) {
+	public Informacao solicitarAlteracaoDado(@PathVariable Long idEmpresa, @RequestBody Informacao informacoesUsuario) {
 		return service.solicitarAlteracaoDado(idEmpresa, informacoesUsuario);
 	}
 	
 	@PostMapping("baba")
-	public InformacoesUsuario solicitarExclusaoDado(@PathVariable Long idEmpresa, @RequestBody InformacoesUsuario informacoesUsuario) {
+	public Informacao solicitarExclusaoDado(@PathVariable Long idEmpresa, @RequestBody Informacao informacoesUsuario) {
 		return service.solicitarExclusaoDado(idEmpresa, informacoesUsuario);
 	}
 }

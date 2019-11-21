@@ -47,8 +47,7 @@
         android:background="#4DEE78"
         app:layout_constraintTop_toBottomOf="@id/divTitulo" />
 
-    <TextView
-        android:id="@+id/containerEmpresas"
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="669dp"
         android:textColor="#FFF"
@@ -116,5 +115,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/divLinhaVerde"
         app:layout_constraintVertical_bias="0.209" />
+=======
+        android:layout_height="match_parent"
+        android:layout_marginTop="53dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/recycler_view"
+        app:layout_constraintTop_toBottomOf="@id/divLinhaVerde"/>
+
+>>>>>>> df6cb0d81055c040fe655cec3b7cab26a4337056
 
 </androidx.constraintlayout.widget.ConstraintLayout>
