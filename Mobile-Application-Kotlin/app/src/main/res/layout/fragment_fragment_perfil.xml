@@ -52,13 +52,12 @@
         android:id="@+id/ivPerfil"
         android:layout_width="197dp"
         android:layout_height="160dp"
-        android:layout_marginTop="20dp"
         android:src="@drawable/ic_account_circle_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divLinhaVerde" />
 
-    <EditText
+    <TextView
         android:id="@+id/editText5"
         android:layout_width="293dp"
         android:layout_height="42dp"

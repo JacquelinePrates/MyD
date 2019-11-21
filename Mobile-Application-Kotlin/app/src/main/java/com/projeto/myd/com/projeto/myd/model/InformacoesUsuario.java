@@ -8,8 +8,8 @@ public class InformacoesUsuario {
 	private Endereco endereco;
 	private Investimentos investimentos;
 	private Perfil perfil;
-	
-	
+
+
 	public boolean isValido() {
 		return valido;
 	}
@@ -46,6 +46,6 @@ public class InformacoesUsuario {
 	public void setPerfil(Perfil perfil) {
 		this.perfil = perfil;
 	}
-	
-	
+
+
 }
