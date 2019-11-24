@@ -4,7 +4,7 @@ public class Informacao {
 
 	private String key;
 	private String value;
-	
+
 	public String getKey() {
 		return key;
 	}
@@ -17,6 +17,6 @@ public class Informacao {
 	public void setValue(String value) {
 		this.value = value;
 	}
-	
-	
+
+
 }

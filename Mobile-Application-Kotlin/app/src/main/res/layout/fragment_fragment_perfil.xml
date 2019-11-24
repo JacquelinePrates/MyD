@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divLinhaVerde" />
 
-    <TextView
+    <EditText
         android:id="@+id/editText5"
         android:layout_width="293dp"
         android:layout_height="42dp"
@@ -83,7 +83,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
-    <EditText
+    <TextView
         android:id="@+id/editText2"
         android:layout_width="293dp"
         android:layout_height="42dp"
@@ -103,11 +103,12 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/edittextperfil"
         android:gravity="center"
-        android:text="SENHA"
+        android:text="senha"
         android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        android:inputType="textPassword"/>
 
     <EditText
         android:id="@+id/editText4"
@@ -116,10 +117,20 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/edittextperfil"
         android:gravity="center"
-        android:text=" CONFIRMAR SENHA"
         android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Atualizar Dados"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText4"
+        android:onClick="mandaPerfil"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

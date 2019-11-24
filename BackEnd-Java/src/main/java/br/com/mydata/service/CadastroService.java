@@ -10,16 +10,20 @@ import br.com.mydata.repository.UsuarioRepository;
 
 @Service
 public class CadastroService {
-	
+
 	@Autowired
-	UsuarioRepository repository;
-	
+	UsuarioRepository usuarioRepository;
+
 	public Usuario cadastraUsuario(Usuario usuario) {
-		
-		if(Objects.isNull(repository.findByCpf(usuario.getCpf()))) {
-		repository.save(usuario);
+
+		if (Objects.isNull(usuarioRepository.findByCpf(usuario.getCpf()))) {
+			usuarioRepository.save(usuario);
 		}
-		return repository.findByCpf(usuario.getCpf());
+		return usuarioRepository.findByCpf(usuario.getCpf());
+	}
+
+	public Usuario buscarPerfil(Long usuarioId) {
+		return usuarioRepository.findById(usuarioId).get();
 	}
 
 }

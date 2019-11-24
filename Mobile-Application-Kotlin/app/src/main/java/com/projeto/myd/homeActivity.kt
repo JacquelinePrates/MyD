@@ -14,7 +14,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.projeto.myd.com.projeto.myd.model.Empresa
+import com.projeto.myd.com.projeto.myd.model.Usuario
+import com.projeto.myd.com.projeto.myd.restConection.asyncTask.CadastroTask
 import com.projeto.myd.com.projeto.myd.restConection.asyncTask.EmpresaTask
+import com.projeto.myd.com.projeto.myd.restConection.asyncTask.PerfilTask
 import com.projeto.myd.com.projeto.myd.restConection.asyncTask.TodasEmpresasTask
 import com.projeto.myd.fragments.fragmentDashboard
 import com.projeto.myd.fragments.fragmentEmpresas
@@ -24,6 +27,7 @@ import com.projeto.myd.fragments.fragmentGrupos
 import com.projeto.myd.fragments.fragmentAgrupador
 import com.projeto.myd.reciclerView.EmpresaRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_fragment_empresas.*
+import kotlinx.android.synthetic.main.fragment_fragment_perfil.*
 import kotlinx.android.synthetic.main.layout_empresas_list_item.view.*
 import java.util.*
 
@@ -42,6 +46,9 @@ class homeActivity : AppCompatActivity() {
     var idGruposAtual: Int? = null
     var empresasComInformacao : List<Empresa>? = null
     private lateinit var empresaAdater : EmpresaRecyclerAdapter
+    var usuarioPerfil: Usuario? = null
+    var usuarioId: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,7 +96,6 @@ class homeActivity : AppCompatActivity() {
 
                     initRecyclerView()
                     addDataSet()
-
                     ativo = fragment2
                     return true
                 }
@@ -106,6 +112,16 @@ class homeActivity : AppCompatActivity() {
                         android.R.animator.fade_in,
                         android.R.animator.fade_out
                     ).hide(ativo).show(fragment4).commit()
+
+                    val sharedPref: SharedPreferences = getSharedPreferences("myd", 0)
+                    usuarioId = sharedPref.getString("usuarioId", "undefined")
+
+                    usuarioPerfil = pegaPerfil(usuarioId)
+
+                    editText5.setText(usuarioPerfil!!.email)
+                    editText.setText(usuarioPerfil!!.nome)
+                    editText2.setText(usuarioPerfil!!.cpf)
+
                     ativo = fragment4
                     return true
                 }
@@ -172,4 +188,19 @@ class homeActivity : AppCompatActivity() {
         return task.execute(usuarioId).get()
     }
 
+    fun pegaPerfil(id:String?): Usuario? {
+        val task = PerfilTask()
+        return task.execute(id).get()
+    }
+
+    fun mandaPerfil(v:View) {
+        val usuario = Usuario()
+        usuario.email = editText5.text.toString()
+        usuario.nome = editText.text.toString()
+        usuario.senha = editText3.text.toString()
+
+        val task = CadastroTask()
+        val fodase = task.execute(usuario)
+
+    }
 }
