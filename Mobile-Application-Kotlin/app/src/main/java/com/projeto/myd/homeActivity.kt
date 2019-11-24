@@ -201,6 +201,5 @@ class homeActivity : AppCompatActivity() {
 
         val task = CadastroTask()
         val fodase = task.execute(usuario)
-
     }
 }
