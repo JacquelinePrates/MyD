@@ -1,9 +1,11 @@
 package com.projeto.myd
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -11,6 +13,7 @@ import com.projeto.myd.com.projeto.myd.model.Empresa
 import com.projeto.myd.com.projeto.myd.restConection.asyncTask.EmpresaTask
 import com.projeto.myd.reciclerView.InformacoesRecyclerAdapter
 import kotlinx.android.synthetic.main.activity_visualizar_informacoes.*
+import kotlinx.android.synthetic.main.layout_informacoes_list_item.view.*
 import java.net.URI
 
 class VisualizarInformacoes : AppCompatActivity() {
@@ -59,6 +62,18 @@ class VisualizarInformacoes : AppCompatActivity() {
             adapter =  infoAdapter
         }
 
-        infoAdapter.submitList(empresa!!.listaDeInformacoes)
+        infoAdapter.submitList(empresa)
+    }
+
+    fun editarInformacoes(v:View){
+
+        var chave: String = v.chave.text.toString()
+        var empresa: String = v.nomeEmpresa.text.toString()
+
+        var telaEditar = Intent(this, EdicaoInformacoes::class.java)
+        telaEditar.putExtra("chave", chave)
+        telaEditar.putExtra("empresa", empresa)
+
+        startActivity(telaEditar)
     }
 }

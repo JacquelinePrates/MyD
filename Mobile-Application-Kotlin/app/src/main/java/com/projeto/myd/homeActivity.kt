@@ -23,7 +23,9 @@ import com.projeto.myd.fragments.fragmentPerfil
 import com.projeto.myd.fragments.fragmentGrupos
 import com.projeto.myd.fragments.fragmentAgrupador
 import com.projeto.myd.reciclerView.EmpresaRecyclerAdapter
+import com.projeto.myd.reciclerView.NotificacaoRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_fragment_empresas.*
+import kotlinx.android.synthetic.main.fragment_fragment_notificacao.*
 import kotlinx.android.synthetic.main.layout_empresas_list_item.view.*
 import java.util.*
 
@@ -42,6 +44,7 @@ class homeActivity : AppCompatActivity() {
     var idGruposAtual: Int? = null
     var empresasComInformacao : List<Empresa>? = null
     private lateinit var empresaAdater : EmpresaRecyclerAdapter
+    private lateinit var notificacaoAdapter : NotificacaoRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -98,6 +101,9 @@ class homeActivity : AppCompatActivity() {
                         android.R.animator.fade_in,
                         android.R.animator.fade_out
                     ).hide(ativo).show(fragment3).commit()
+
+                    initRecyclerViewNotificacao()
+
                     ativo = fragment3
                     return true
                 }
@@ -112,6 +118,14 @@ class homeActivity : AppCompatActivity() {
             }
             return false
         }
+    }
+
+    fun initRecyclerViewNotificacao(){
+        notificacaoReciclerView.layoutManager = LinearLayoutManager(this@homeActivity)
+        notificacaoAdapter = NotificacaoRecyclerAdapter()
+        notificacaoReciclerView.adapter = notificacaoAdapter
+
+        notificacaoAdapter.submitList(VariavelGlobal.notificacoes)
     }
 
     fun initRecyclerView(){
