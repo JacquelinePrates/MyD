@@ -19,10 +19,10 @@ import br.com.mydata.service.CadastroService;
 @CrossOrigin
 @RequestMapping("cadastro")
 public class CadastroController {
-	
+
 	@Autowired
 	CadastroService cadastroService;
-	
+
 	@GetMapping("buscar/{id}")
 	public Usuario buscarPerfilUsuario(@PathVariable Long id) {
 		return cadastroService.buscarPerfil(id);
@@ -31,6 +31,10 @@ public class CadastroController {
 	@PostMapping
 	public Usuario cadastrar(@RequestBody Usuario novoUsuario) {
 		return cadastroService.cadastraUsuario(novoUsuario);
-		
+	}
+
+	@PostMapping("atualizar")
+	public Usuario atualizar(@RequestBody Usuario Usuario) {
+		return cadastroService.atualizaUsuario(Usuario);
 	}
 }

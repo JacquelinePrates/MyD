@@ -1,6 +1,7 @@
 package com.projeto.myd.com.projeto.myd.restConection.asyncTask
 
 import android.os.AsyncTask
+import com.projeto.myd.VariavelGlobal
 import com.projeto.myd.com.projeto.myd.model.Usuario
 import com.projeto.myd.com.projeto.myd.restConection.Service.EmpresasRequisicoes
 import com.projeto.myd.com.projeto.myd.restConection.Service.PerfilRequisicoes
@@ -14,7 +15,7 @@ class PerfilTask : AsyncTask<String?, Void, Usuario?>() {
         val request = Feign.builder()
             .encoder(GsonEncoder())
             .decoder(GsonDecoder())
-            .target(PerfilRequisicoes::class.java, "http://10.3.1.253:8080")
+            .target(PerfilRequisicoes::class.java, (VariavelGlobal.urlDoPc+":8080"))
 
         try {
             return request.buscaPerfil(p0[0])

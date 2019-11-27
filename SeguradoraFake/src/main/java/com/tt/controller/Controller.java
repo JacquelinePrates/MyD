@@ -23,7 +23,7 @@ public class Controller {
 		
 		Empresa empresa = new Empresa();
 		empresa.setCnpj("59.414.208/0001-08");
-		empresa.setRazaoSocial("PortoSeguro");
+		empresa.setRazaoSocial("Porto Seguro");
 		empresa.setUrlDaLogo("https://raw.githubusercontent.com/JacquelinePrates/MyD/criacaoDosReciclerViews/Imagens/porto.png");
 		
 		if(cpf.equals("12345678900")) {
@@ -40,8 +40,12 @@ public class Controller {
 			Informacao conjuge = new Informacao("Cônjuge", "Maria dos Santos");
 			informacoes.add(conjuge);
 			empresa.setListaDeInformacoes(informacoes);
-		}else if(cpf.equals("9875432100")) {
-				
+		}else if(cpf.equals("48986485842")) {
+			Informacao nome = new Informacao("Nome", "Lucas");
+			informacoes.add(nome);
+			Informacao sobrenome = new Informacao("Sobrenome", "Antunes");
+			informacoes.add(sobrenome);
+			empresa.setListaDeInformacoes(informacoes);
 		}else {
 			
 		}

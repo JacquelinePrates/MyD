@@ -13,12 +13,10 @@ import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.projeto.myd.com.projeto.myd.Utilities.Criptografia
 import com.projeto.myd.com.projeto.myd.model.Empresa
 import com.projeto.myd.com.projeto.myd.model.Usuario
-import com.projeto.myd.com.projeto.myd.restConection.asyncTask.CadastroTask
-import com.projeto.myd.com.projeto.myd.restConection.asyncTask.EmpresaTask
-import com.projeto.myd.com.projeto.myd.restConection.asyncTask.PerfilTask
-import com.projeto.myd.com.projeto.myd.restConection.asyncTask.TodasEmpresasTask
+import com.projeto.myd.com.projeto.myd.restConection.asyncTask.*
 import com.projeto.myd.fragments.fragmentDashboard
 import com.projeto.myd.fragments.fragmentEmpresas
 import com.projeto.myd.fragments.fragmentNotificacao
@@ -26,8 +24,10 @@ import com.projeto.myd.fragments.fragmentPerfil
 import com.projeto.myd.fragments.fragmentGrupos
 import com.projeto.myd.fragments.fragmentAgrupador
 import com.projeto.myd.reciclerView.EmpresaRecyclerAdapter
+import com.projeto.myd.reciclerView.NotificacaoRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_fragment_empresas.*
 import kotlinx.android.synthetic.main.fragment_fragment_perfil.*
+import kotlinx.android.synthetic.main.fragment_fragment_notificacao.*
 import kotlinx.android.synthetic.main.layout_empresas_list_item.view.*
 import java.util.*
 
@@ -46,9 +46,11 @@ class homeActivity : AppCompatActivity() {
     var idGruposAtual: Int? = null
     var empresasComInformacao : List<Empresa>? = null
     private lateinit var empresaAdater : EmpresaRecyclerAdapter
+
     var usuarioPerfil: Usuario? = null
     var usuarioId: String? = null
 
+    private lateinit var notificacaoAdapter : NotificacaoRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -104,6 +106,9 @@ class homeActivity : AppCompatActivity() {
                         android.R.animator.fade_in,
                         android.R.animator.fade_out
                     ).hide(ativo).show(fragment3).commit()
+
+                    initRecyclerViewNotificacao()
+
                     ativo = fragment3
                     return true
                 }
@@ -128,6 +133,14 @@ class homeActivity : AppCompatActivity() {
             }
             return false
         }
+    }
+
+    fun initRecyclerViewNotificacao(){
+        notificacaoReciclerView.layoutManager = LinearLayoutManager(this@homeActivity)
+        notificacaoAdapter = NotificacaoRecyclerAdapter()
+        notificacaoReciclerView.adapter = notificacaoAdapter
+
+        notificacaoAdapter.submitList(VariavelGlobal.notificacoes)
     }
 
     fun initRecyclerView(){
@@ -173,6 +186,7 @@ class homeActivity : AppCompatActivity() {
         when (ativo) {
             fragmentGrupos -> retornoParaEmpresa()
             fragmentAgrupador -> retornaParaGrupos()
+            fragment1, fragment2, fragment3, fragment4 -> finish()
         }
     }
 
@@ -197,9 +211,14 @@ class homeActivity : AppCompatActivity() {
         val usuario = Usuario()
         usuario.email = editText5.text.toString()
         usuario.nome = editText.text.toString()
-        usuario.senha = editText3.text.toString()
 
-        val task = CadastroTask()
-        val fodase = task.execute(usuario)
+        if(editText3.text.toString() != "senha"){
+            usuario.senha = Criptografia.sha256(editText3.text.toString())
+        }
+
+        usuario.cpf =  editText2.text.toString()
+
+        val task = CadastroAtualizarTask()
+        val fodase = task.execute(usuario).get()
     }
 }

@@ -26,4 +26,16 @@ public class CadastroService {
 		return usuarioRepository.findById(usuarioId).get();
 	}
 
+	public Usuario atualizaUsuario(Usuario usuario) {
+		Usuario usuarioDoBanco = usuarioRepository.findByCpf(usuario.getCpf());
+		usuarioDoBanco.setEmail(usuario.getEmail());
+		if(!(usuario.getSenha() == "")) {
+			usuarioDoBanco.setSenha(usuario.getSenha());
+		}
+		usuarioDoBanco.setNome(usuario.getNome());
+		
+		usuarioRepository.save(usuarioDoBanco);
+		return usuarioDoBanco;
+	}
+
 }

@@ -1,6 +1,7 @@
 package com.projeto.myd.com.projeto.myd.restConection.asyncTask
 
 import android.os.AsyncTask
+import com.projeto.myd.VariavelGlobal
 import com.projeto.myd.com.projeto.myd.model.Usuario
 import com.projeto.myd.com.projeto.myd.restConection.Service.CadastroRequisicoes
 import feign.Feign
@@ -13,7 +14,7 @@ class CadastroTask : AsyncTask<Usuario, Void, Usuario>(){
         val request = Feign.builder()
             .encoder(GsonEncoder())
             .decoder(GsonDecoder())
-            .target(CadastroRequisicoes::class.java, "http://10.3.1.253:8080")
+            .target(CadastroRequisicoes::class.java, (VariavelGlobal.urlDoPc+":8080"))
 
         try {
             return request.cadastrar(params[0]!!)

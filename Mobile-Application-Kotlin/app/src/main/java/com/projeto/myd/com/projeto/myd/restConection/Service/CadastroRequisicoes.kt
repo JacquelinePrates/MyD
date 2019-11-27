@@ -12,4 +12,9 @@ interface CadastroRequisicoes {
     @Headers("Accept: application/json",
         "Content-Type: application/json")
     fun cadastrar(usuario: Usuario) : Usuario?
+
+    @RequestLine("POST /cadastro/atualizar")
+    @Headers("Accept: application/json",
+        "Content-Type: application/json")
+    fun atualizar(usuario: Usuario) : Usuario?
 }
