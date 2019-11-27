@@ -28,23 +28,24 @@ import kotlinx.android.synthetic.main.fragment_fragment_empresas.*
 import kotlinx.android.synthetic.main.fragment_fragment_notificacao.*
 import kotlinx.android.synthetic.main.layout_empresas_list_item.view.*
 import java.util.*
+import kotlin.reflect.KFunction1
 
 class homeActivity : AppCompatActivity() {
 
-    val fragment1: Fragment = fragmentDashboard()
+//    val fragment1: Fragment = fragmentDashboard()
     val fragment2: Fragment = fragmentEmpresas()
     val fragment3: Fragment = fragmentNotificacao()
     val fragment4: Fragment = fragmentPerfil()
     val fragmentGrupos: Fragment = fragmentGrupos()
     val fragmentAgrupador: Fragment = fragmentAgrupador()
     val fm = supportFragmentManager
-    var ativo = fragment1
+    var ativo = fragment2
 
     var id: Long? = null
     var idGruposAtual: Int? = null
     var empresasComInformacao : List<Empresa>? = null
-    private lateinit var empresaAdater : EmpresaRecyclerAdapter
-    private lateinit var notificacaoAdapter : NotificacaoRecyclerAdapter
+    private var empresaAdater : EmpresaRecyclerAdapter?? = null
+    private var notificacaoAdapter : NotificacaoRecyclerAdapter?? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +60,7 @@ class homeActivity : AppCompatActivity() {
         fm.beginTransaction().add(R.id.container, fragmentGrupos).hide(fragmentGrupos).commit()
         fm.beginTransaction().add(R.id.container, fragmentAgrupador).hide(fragmentAgrupador)
             .commit()
-        val commit = fm.beginTransaction().add(R.id.container, fragment1).commit()
+       //val commit = fm.beginTransaction().add(R.id.container, fragment2).commit()
 
         id = intent.getLongExtra("id", 0)
 
@@ -69,21 +70,25 @@ class homeActivity : AppCompatActivity() {
         editor.apply()
 
         empresasComInformacao = pegaEmpresasComInformacao(id)
-    }
 
+        initRecyclerView()
+        addDataSet()
+
+    }
     private val mOnNavigationItemSelectedListener = object :
         BottomNavigationView.OnNavigationItemSelectedListener {
         override fun onNavigationItemSelected(item: MenuItem): Boolean {
-            when (item.getItemId()) {
-                R.id.navigation_home -> {
-                    fm.beginTransaction().setCustomAnimations(
-                        android.R.animator.fade_in,
-                        android.R.animator.fade_out
-                    ).hide(ativo).show(fragment1).commit()
-                    ativo = fragment1
 
-                    return true
-                }
+            when (item.getItemId()) {
+//                R.id.navigation_home -> {
+//                    fm.beginTransaction().setCustomAnimations(
+//                        android.R.animator.fade_in,
+//                        android.R.animator.fade_out
+//                    ).hide(ativo).show(fragment1).commit()
+//                    ativo = fragment1
+//
+//                    return true
+//                }
                 R.id.navigation_empresas -> {
                     fm.beginTransaction().setCustomAnimations(
                         android.R.animator.fade_in,
@@ -125,7 +130,7 @@ class homeActivity : AppCompatActivity() {
         notificacaoAdapter = NotificacaoRecyclerAdapter()
         notificacaoReciclerView.adapter = notificacaoAdapter
 
-        notificacaoAdapter.submitList(VariavelGlobal.notificacoes)
+        notificacaoAdapter!!.submitList(VariavelGlobal.notificacoes)
     }
 
     fun initRecyclerView(){
@@ -136,7 +141,7 @@ class homeActivity : AppCompatActivity() {
 
     fun addDataSet(){
         val data = empresasComInformacao
-        empresaAdater.submitList(data!!)
+        empresaAdater!!.submitList(data!!)
     }
 
     fun clickEmpresaRecliclerView(v: View){

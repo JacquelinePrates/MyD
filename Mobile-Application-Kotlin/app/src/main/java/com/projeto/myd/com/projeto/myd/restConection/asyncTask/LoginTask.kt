@@ -14,7 +14,7 @@ class LoginTask : AsyncTask<Usuario, Void, Usuario>() {
         val request = Feign.builder()
             .encoder(GsonEncoder())
             .decoder(GsonDecoder())
-            .target(LoginRequisicoes::class.java, "http://192.168.1.31:8080")
+            .target(LoginRequisicoes::class.java, "http://10.100.155.225:8080")
 
         try {
             return request.logar(params[0]!!)

@@ -13,7 +13,7 @@ class CadastroTask : AsyncTask<Usuario, Void, Usuario>(){
         val request = Feign.builder()
             .encoder(GsonEncoder())
             .decoder(GsonDecoder())
-            .target(CadastroRequisicoes::class.java, "http://192.168.1.31:8080")
+            .target(CadastroRequisicoes::class.java, "http://10.100.155.225:8080")
 
         try {
             return request.cadastrar(params[0]!!)
