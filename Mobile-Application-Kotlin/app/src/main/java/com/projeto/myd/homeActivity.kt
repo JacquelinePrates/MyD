@@ -33,14 +33,13 @@ import java.util.*
 
 class homeActivity : AppCompatActivity() {
 
-    val fragment1: Fragment = fragmentDashboard()
     val fragment2: Fragment = fragmentEmpresas()
     val fragment3: Fragment = fragmentNotificacao()
     val fragment4: Fragment = fragmentPerfil()
     val fragmentGrupos: Fragment = fragmentGrupos()
     val fragmentAgrupador: Fragment = fragmentAgrupador()
     val fm = supportFragmentManager
-    var ativo = fragment1
+    var ativo = fragment2
 
     var id: Long? = null
     var idGruposAtual: Int? = null
@@ -61,11 +60,10 @@ class homeActivity : AppCompatActivity() {
 
         fm.beginTransaction().add(R.id.container, fragment4).hide(fragment4).commit()
         fm.beginTransaction().add(R.id.container, fragment3).hide(fragment3).commit()
-        fm.beginTransaction().add(R.id.container, fragment2).hide(fragment2).commit()
+        fm.beginTransaction().add(R.id.container, fragment2).commit()
         fm.beginTransaction().add(R.id.container, fragmentGrupos).hide(fragmentGrupos).commit()
         fm.beginTransaction().add(R.id.container, fragmentAgrupador).hide(fragmentAgrupador)
             .commit()
-        val commit = fm.beginTransaction().add(R.id.container, fragment1).commit()
 
         id = intent.getLongExtra("id", 0)
 
@@ -77,19 +75,16 @@ class homeActivity : AppCompatActivity() {
         empresasComInformacao = pegaEmpresasComInformacao(id)
     }
 
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
+        initRecyclerView()
+        addDataSet()
+    }
+
     private val mOnNavigationItemSelectedListener = object :
         BottomNavigationView.OnNavigationItemSelectedListener {
         override fun onNavigationItemSelected(item: MenuItem): Boolean {
             when (item.getItemId()) {
-                R.id.navigation_home -> {
-                    fm.beginTransaction().setCustomAnimations(
-                        android.R.animator.fade_in,
-                        android.R.animator.fade_out
-                    ).hide(ativo).show(fragment1).commit()
-                    ativo = fragment1
-
-                    return true
-                }
                 R.id.navigation_empresas -> {
                     fm.beginTransaction().setCustomAnimations(
                         android.R.animator.fade_in,
@@ -186,7 +181,7 @@ class homeActivity : AppCompatActivity() {
         when (ativo) {
             fragmentGrupos -> retornoParaEmpresa()
             fragmentAgrupador -> retornaParaGrupos()
-            fragment1, fragment2, fragment3, fragment4 -> finish()
+            fragment2, fragment3, fragment4 -> finish()
         }
     }
 
