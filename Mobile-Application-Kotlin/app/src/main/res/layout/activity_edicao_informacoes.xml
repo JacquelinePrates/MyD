@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#202136"
+    android:layout_gravity="center_horizontal"
     tools:context=".EdicaoInformacoes">
 
     <TextView
         android:id="@+id/divTitulo"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="#FFF"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        android:background="#ffffff"
+        />
 
     <TextView
         android:id="@+id/textoTitulo"
@@ -37,26 +38,47 @@
 
     <EditText
         android:id="@+id/valorNovo"
-        app:layout_constraintTop_toTopOf="@id/divLinhaVerde"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        style="@style/StyledTilEditText"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="156dp"
+        android:inputType="text"
+
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/divLinhaVerde" />
 
     <Button
         android:id="@+id/editar"
-        app:layout_constraintTop_toBottomOf="@+id/valorNovo"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="atualizar"
-        android:onClick="editar"/>
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#2AABC4"
+        android:onClick="editar"
+        android:textAllCaps="false"
+        android:text="Atualizar"
+        android:textColor="#FFF"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valorNovo" />
 
     <Button
         android:id="@+id/excluir"
-        app:layout_constraintTop_toBottomOf="@+id/valorNovo"
-        app:layout_constraintLeft_toRightOf="@id/editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="96dp"
+        android:backgroundTint="#DB544D"
+        android:onClick="excluir"
         android:text="Excluir"
-        android:onClick="excluir"/>
+        android:textColor="#FFF"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/editar"
+        app:layout_constraintTop_toBottomOf="@+id/valorNovo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
