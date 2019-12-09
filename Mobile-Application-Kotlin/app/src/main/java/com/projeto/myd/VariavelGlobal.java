@@ -5,5 +5,5 @@ import java.util.List;
 
 public class VariavelGlobal {
     public static List<String> notificacoes = new ArrayList();
-    public static final String urlDoPc = "http://192.168.1.31";
+    public static final String urlDoPc = "http://10.3.1.253";
 }

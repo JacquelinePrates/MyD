@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/MyD-Mobile-Application-Kotlin.iml" filepath="$PROJECT_DIR$/MyD-Mobile-Application-Kotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/MyD-Mobile-Application-Kotlin-app.iml" filepath="$PROJECT_DIR$/app/MyD-Mobile-Application-Kotlin-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projeto-MyD-Mobile-Application-Kotlin.iml" filepath="$PROJECT_DIR$/projeto-MyD-Mobile-Application-Kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/projeto-MyD-Mobile-Application-Kotlin-app.iml" filepath="$PROJECT_DIR$/app/projeto-MyD-Mobile-Application-Kotlin-app.iml" />
     </modules>
   </component>
 </project>

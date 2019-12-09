@@ -22,16 +22,16 @@ public class Controller {
 		List<Informacao> informacoes = new ArrayList<Informacao>();
 		
 		Empresa empresa = new Empresa();
-		empresa.setCnpj("59.414.208/0001-08");
-		empresa.setRazaoSocial("Porto Seguro");
-		empresa.setUrlDaLogo("https://raw.githubusercontent.com/JacquelinePrates/MyD/criacaoDosReciclerViews/Imagens/porto.png");
+		empresa.setCnpj("29.416.244/0001-08");
+		empresa.setRazaoSocial("Nubank");
+		empresa.setUrlDaLogo("https://raw.githubusercontent.com/JacquelinePrates/MyD/criacaoDosReciclerViews/Imagens/nubank.png");
 		
 		if(cpf.equals("12345678900")) {
-			Informacao nome = new Informacao("Nome", "Jose Dos Santos");
+			Informacao nome = new Informacao("Nome", "Jose");
 			informacoes.add(nome);
 			Informacao email = new Informacao("Email", "jose@gmail.com");
 			informacoes.add(email);
-			Informacao qtdFilhos = new Informacao("Quantidade de filhos", "2");
+			Informacao qtdFilhos = new Informacao("Cargo", "Marceneiro");
 			informacoes.add(qtdFilhos);
 			Informacao salario = new Informacao("Salario", "1.500R$");
 			informacoes.add(salario);
@@ -43,8 +43,6 @@ public class Controller {
 		}else if(cpf.equals("48986485842")) {
 			Informacao nome = new Informacao("Nome", "Lucas");
 			informacoes.add(nome);
-			Informacao sobrenome = new Informacao("Sobrenome", "Antunes");
-			informacoes.add(sobrenome);
 			empresa.setListaDeInformacoes(informacoes);
 		}else {
 			
