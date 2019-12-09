@@ -31,6 +31,8 @@ public class MyDJavaApplication {
 		return args -> {
 			empresaRepository.save(new Empresa("Porto Seguro", "59.414.208/0001-08", "http://localhost:8081/informacao"));
 			empresaRepository.save(new Empresa("Nubank", "59.414.208/0001-08", "http://localhost:8082/informacao"));
+			empresaRepository.save(new Empresa("McDonald's", "59.942.668/0001-08", "http://localhost:8083/informacao"));
+			empresaRepository.save(new Empresa("Coca Cola", "29.365.763/0001-08", "http://localhost:8084/informacao"));
 		};
 		
 	}
