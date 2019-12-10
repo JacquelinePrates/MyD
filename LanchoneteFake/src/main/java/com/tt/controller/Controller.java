@@ -24,7 +24,7 @@ public class Controller {
 		Empresa empresa = new Empresa();
 		empresa.setCnpj("59.942.668/0001-08");
 		empresa.setRazaoSocial("McDonald's");
-		empresa.setUrlDaLogo("https://raw.githubusercontent.com/JacquelinePrates/MyD/criacaoDosReciclerViews/Imagens/empresamc.png");
+		empresa.setUrlDaLogo("https://raw.githubusercontent.com/JacquelinePrates/MyD/master/Imagens/empresamc.png");
 		
 		if(cpf.equals("12345678900")) {
 			Informacao nome = new Informacao("Nome", "Jose Dos Santos");

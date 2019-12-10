@@ -23,8 +23,8 @@ public class Controller {
 		
 		Empresa empresa = new Empresa();
 		empresa.setCnpj("29.365.763/0001-08");
-		empresa.setRazaoSocial("Porto Seguro");
-		empresa.setUrlDaLogo("https://raw.githubusercontent.com/JacquelinePrates/MyD/criacaoDosReciclerViews/Imagens/empresacoca.png");
+		empresa.setRazaoSocial("Coca Cola");
+		empresa.setUrlDaLogo("https://raw.githubusercontent.com/JacquelinePrates/MyD/master/Imagens/empresacoca.png");
 		
 		if(cpf.equals("12345678900")) {
 			Informacao nome = new Informacao("Nome", "Jose Dos Santos");

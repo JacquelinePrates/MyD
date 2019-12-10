@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:foregroundGravity="center"
-        android:src="@drawable/ic_perm_identity_black_24dp"
+        android:src="@drawable/ic_person_white_24dp"
         app:layout_constraintBottom_toTopOf="@+id/divLinhaVerde"
         app:layout_constraintEnd_toStartOf="@+id/tvtituloPerfil"
         app:layout_constraintHorizontal_bias="1.0"
@@ -62,10 +62,10 @@
         android:layout_width="293dp"
         android:layout_height="42dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/edittextperfil"
         android:gravity="center"
         android:text="EMAIL"
         android:textColor="#FFF"
+        style="@style/StyledTilEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivPerfil" />
@@ -75,7 +75,7 @@
         android:layout_width="293dp"
         android:layout_height="42dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/edittextperfil"
+        style="@style/StyledTilEditText"
         android:gravity="center"
         android:text="NOME"
         android:textColor="#FFF"
@@ -88,7 +88,6 @@
         android:layout_width="293dp"
         android:layout_height="42dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/edittextperfil"
         android:gravity="center"
         android:text="CPF"
         android:textColor="#FFF"
@@ -96,26 +95,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
+    <TextView
+        android:layout_width="293dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        android:background="#e6ffffff"/>
+
     <EditText
         android:id="@+id/editText3"
+        style="@style/StyledTilEditText"
         android:layout_width="293dp"
         android:layout_height="42dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/edittextperfil"
         android:gravity="center"
+        android:inputType="textPassword"
         android:text="senha"
         android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        android:inputType="textPassword"/>
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <EditText
         android:id="@+id/editText4"
         android:layout_width="293dp"
         android:layout_height="42dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/edittextperfil"
+        style="@style/StyledTilEditText"
         android:gravity="center"
         android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
